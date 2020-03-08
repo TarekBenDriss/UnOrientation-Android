@@ -37,8 +37,8 @@ jobs:
     - name: upload artifact to Firebase App Distribution
       uses: wzieba/Firebase-Distribution-Github-Action@v1.1.1
       with:
-        appId: "unorientation-18dfd"
-        token: "1//037F8nqWdWqFTCgYIARAAGAMSNwF-L9IrvUjazJ1g6eyD7tLyDqFhfxs_mdACx8y2OWDKcV7P9K6wKzOmwcPMBL2GAe__5WJSoKo"
+        appId: ${{secrets.FIREBASE_APP_ID}}
+        token: ${{secrets.FIREBASE_TOKEN}}
         groups: testers
         file: app/build/outputs/apk/release/app-release-unsigned.apk
 
