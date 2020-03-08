@@ -38,7 +38,7 @@ jobs:
       uses: wzieba/Firebase-Distribution-Github-Action@v1.1.1
       with:
         appId: unorientation-18dfd
-        token: AAAAvSECwD0:APA91bGtwYKpcg2luey4RK7ID-3__SP10MsaEUpi82bvRXXAFpthWR8c81UIAKs-upH3jSoP5KWTCmUHsHMB2vTmR5KQnA6dlXaVeOH2xMYShbY8zQvkJpcSzd3s75lt15KiyQ9ei2tY
+        token: 1//03dmXrD-XlMEICgYIARAAGAMSNwF-L9Ir0qaabZZ8JIT7IzGcF9gw2uiTSAP99_ra88rEplCwJCOtarrTR0VyTj9Ubp8trcefpNg
         groups: testers
         file: app/build/outputs/apk/release/app-release-unsigned.apk
 
