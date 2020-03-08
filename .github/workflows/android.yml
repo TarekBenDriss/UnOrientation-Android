@@ -23,7 +23,7 @@ jobs:
         run: bash ./gradlew test --stacktrace
 
   build:
-
+    name: Upload apk to App Tester
     runs-on: ubuntu-latest
 
     steps:
