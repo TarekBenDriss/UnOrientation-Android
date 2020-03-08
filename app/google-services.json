@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "812302647357",
+    "firebase_url": "https://unorientation-18dfd.firebaseio.com",
+    "project_id": "unorientation-18dfd",
+    "storage_bucket": "unorientation-18dfd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:812302647357:android:53eebd3029e58168416a54",
+        "android_client_info": {
+          "package_name": "bendriss.tarek.unorientation"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "812302647357-ljmh13vhu1dqf1ct6ado5v74op2ti50u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDA_rqfxGfX0qtNHsd8TYOPg6FOkqDAM4o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "812302647357-ljmh13vhu1dqf1ct6ado5v74op2ti50u.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
