@@ -33,14 +33,14 @@ jobs:
       with:
         java-version: 1.8
     - name: build release 
-      run: bash ./gradlew assembleRelease
+      run: bash ./gradlew assembleDebug
     - name: upload artifact to Firebase App Distribution
       uses: wzieba/Firebase-Distribution-Github-Action@v1.1.1
       with:
         appId: '1:812302647357:android:53eebd3029e58168416a54'
         token: '1//037F8nqWdWqFTCgYIARAAGAMSNwF-L9IrvUjazJ1g6eyD7tLyDqFhfxs_mdACx8y2OWDKcV7P9K6wKzOmwcPMBL2GAe__5WJSoKo'
         groups: testers
-        file: app/build/outputs/apk/release/app-release.apk
+        file: app/build/outputs/apk/debug/app-debug.apk
 
   apk:
     name: Generate APK
