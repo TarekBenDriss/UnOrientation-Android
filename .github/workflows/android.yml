@@ -1,4 +1,4 @@
-name: Android Pull Request & Master CI
+name: Android Pull Request & Master CI & CD to Firebase
 
 on:
   pull_request:
