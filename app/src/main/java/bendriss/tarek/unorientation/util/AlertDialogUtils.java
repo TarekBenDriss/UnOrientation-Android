@@ -1,4 +1,4 @@
-package bendriss.tarek.unorientation.modules.util;
+package bendriss.tarek.unorientation.util;
 
 
 import android.app.AlertDialog;

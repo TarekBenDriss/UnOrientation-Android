@@ -1,4 +1,4 @@
-package bendriss.tarek.unorientation.modules.base;
+package bendriss.tarek.unorientation.base;
 
 import android.content.Context;
 import android.content.res.Resources;

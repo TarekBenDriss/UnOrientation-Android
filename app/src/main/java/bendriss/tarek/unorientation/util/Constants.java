@@ -1,4 +1,4 @@
-package bendriss.tarek.unorientation.modules.util;
+package bendriss.tarek.unorientation.util;
 
 /**
  * this class represents the used constants across the app

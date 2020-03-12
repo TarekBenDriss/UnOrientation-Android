@@ -10,7 +10,7 @@ import androidx.appcompat.app.AppCompatActivity
 import bendriss.tarek.unorientation.modules.main.MainActivity
 import bendriss.tarek.unorientation.R
 import bendriss.tarek.unorientation.modules.login.LoginActivity
-import bendriss.tarek.unorientation.modules.util.Constants
+import bendriss.tarek.unorientation.util.Constants
 
 class SplachScreenActivity : AppCompatActivity() {
     private var preferences: SharedPreferences? = null

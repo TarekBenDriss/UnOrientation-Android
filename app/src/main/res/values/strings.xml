@@ -5,10 +5,12 @@
     <string name="password">Password</string>
     <string name="code_agence">Agency code</string>
     <string name="dont_have_account">Don\'t have an account? Register now...</string>
+    <string name="error_incorrect_password_msg">Please try again</string>
 
     <string name="login">CONNECT</string>
     <string name="login_word">Login</string>
     <string name="img_description">Description</string>
+    <string name="error_incorrect_password">Wrong password</string>
 
     <string name="m1">January</string>
     <string name="m2">February</string>

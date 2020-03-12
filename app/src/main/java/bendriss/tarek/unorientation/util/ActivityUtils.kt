@@ -1,4 +1,4 @@
-package bendriss.tarek.unorientation.modules.util
+package bendriss.tarek.unorientation.util
 
 import android.annotation.SuppressLint
 import android.app.Activity
@@ -14,9 +14,8 @@ import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
-import bendriss.tarek.unorientation.modules.base.BaseActivity
-import bendriss.tarek.unorientation.modules.base.BaseFragment
-import java.util.logging.Logger
+import bendriss.tarek.unorientation.base.BaseActivity
+import bendriss.tarek.unorientation.base.BaseFragment
 
 
 /**
@@ -51,6 +50,7 @@ class ActivityUtils {
     }
 
     companion object {
+        @JvmStatic
         fun getManager(context: Context?): FragmentManager? {
             return if (context != null) {
                 try {
