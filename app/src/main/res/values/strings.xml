@@ -1,3 +1,44 @@
 <resources>
     <string name="app_name">UnOrientation</string>
+    <string name="adresse">Address</string>
+    <string name="email">E-mail</string>
+    <string name="password">Password</string>
+    <string name="code_agence">Agency code</string>
+    <string name="dont_have_account">Don\'t have an account? Register now...</string>
+
+    <string name="login">CONNECT</string>
+    <string name="login_word">Login</string>
+    <string name="img_description">Description</string>
+
+    <string name="m1">January</string>
+    <string name="m2">February</string>
+    <string name="m3">March</string>
+    <string name="m4">April</string>
+    <string name="m5">May</string>
+    <string name="m6">June</string>
+    <string name="m7">July</string>
+    <string name="m8">August</string>
+    <string name="m9">September</string>
+    <string name="m10">October</string>
+    <string name="m11">November</string>
+    <string name="m12">December</string>
+
+    <string name="empty" />
+    <string name="ok">OK</string>
+    <string name="required_fields">Please fill all required fields</string>
+
+    <string name="dialog_action_yes">Yes</string>
+    <string name="dialog_action_no">No</string>
+    <string name="sm1">JAN</string>
+    <string name="sm2">FEB</string>
+    <string name="sm3">MAR</string>
+    <string name="sm4">APR</string>
+    <string name="sm5">MAY</string>
+    <string name="sm6">JUN</string>
+    <string name="sm7">JUL</string>
+    <string name="sm8">AUG</string>
+    <string name="sm9">SEP</string>
+    <string name="sm10">OCT</string>
+    <string name="sm11">NOV</string>
+    <string name="sm12">DEC</string>
 </resources>

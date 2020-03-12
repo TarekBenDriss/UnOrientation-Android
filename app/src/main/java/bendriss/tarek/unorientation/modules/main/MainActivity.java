@@ -1,8 +1,10 @@
-package bendriss.tarek.unorientation;
+package bendriss.tarek.unorientation.modules.main;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import bendriss.tarek.unorientation.R;
 
 public class MainActivity extends AppCompatActivity {
 
