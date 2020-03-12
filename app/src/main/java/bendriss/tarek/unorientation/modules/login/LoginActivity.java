@@ -69,7 +69,7 @@ public class LoginActivity extends BaseActivity {
             p= password.getText().toString();
             if(isValid())
             {
-                App.initAppComponent2("https://"+".pokmy.net/");
+                //App.initAppComponent2("https://"+".pokmy.net/");
 
                 App.getDataComponent().inject(this);
 

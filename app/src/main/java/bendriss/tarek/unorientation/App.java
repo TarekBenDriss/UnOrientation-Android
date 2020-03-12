@@ -80,7 +80,7 @@ public class App extends MultiDexApplication {
                 .storageModule(new StorageModule())
                 .build();
 
-         
+
     }
 
     @Override
