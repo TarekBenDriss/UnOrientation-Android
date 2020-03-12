@@ -9,6 +9,7 @@ import androidx.multidex.MultiDexApplication;
 
 import java.util.Locale;
 
+import bendriss.tarek.unorientation.data.source.DaggerDataComponent;
 import bendriss.tarek.unorientation.data.source.DataComponent;
 import bendriss.tarek.unorientation.data.source.local.database.StorageModule;
 import bendriss.tarek.unorientation.data.source.remote.service.NetworkModule;
@@ -60,20 +61,26 @@ public class App extends MultiDexApplication {
 
 
     private void initAppComponent() {
+
         dataComponent = DaggerDataComponent.builder()
                 .appModule(new AppModule(this))
                 .networkModule(new NetworkModule(ServiceEndpoint.BASE_URL))
                 .storageModule(new StorageModule())
                 .build();
+
+
     }
 
     public static void initAppComponent2(String s) {
+
         dataComponent = DaggerDataComponent.builder()
                 .appModule(new AppModule(app))
                 .networkModule(new NetworkModule(s))
                 //.networkModule(new NetworkModule(NetworkConstants.BASE_URL))
                 .storageModule(new StorageModule())
                 .build();
+
+         
     }
 
     @Override
