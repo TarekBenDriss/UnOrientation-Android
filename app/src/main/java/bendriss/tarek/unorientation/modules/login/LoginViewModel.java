@@ -10,8 +10,10 @@ import javax.inject.Inject;
 
 import bendriss.tarek.unorientation.App;
 import bendriss.tarek.unorientation.base.BaseViewModel;
+import bendriss.tarek.unorientation.data.source.local.entity.UserProfile;
 import bendriss.tarek.unorientation.data.source.remote.params.LoginParams;
 import bendriss.tarek.unorientation.data.source.remote.response.LoginResponse;
+import bendriss.tarek.unorientation.data.source.remote.response.SignupResponse;
 import bendriss.tarek.unorientation.data.source.repository.UserRepository;
 import io.reactivex.Single;
 import io.reactivex.android.schedulers.AndroidSchedulers;
@@ -86,8 +88,17 @@ public class LoginViewModel extends BaseViewModel {
     }
 */
 
-    public Single<LoginResponse> signinPok(LoginParams lp) {
+    public Single<LoginResponse> signin(LoginParams lp) {
         return mRepository.login(lp)
+                //
+                .subscribeOn(Schedulers.computation())
+                //
+                .observeOn(AndroidSchedulers.mainThread());
+    }
+
+    public Single<SignupResponse> signup(UserProfile userProfile) {
+
+        return mRepository.signup(userProfile)
                 //
                 .subscribeOn(Schedulers.computation())
                 //

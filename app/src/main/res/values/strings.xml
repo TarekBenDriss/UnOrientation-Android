@@ -8,6 +8,7 @@
     <string name="error_incorrect_password_msg">Please try again</string>
 
     <string name="login">CONNECT</string>
+    <string name="register">REGISTER</string>
     <string name="login_word">Login</string>
     <string name="img_description">Description</string>
     <string name="error_incorrect_password">Wrong password</string>
@@ -43,4 +44,23 @@
     <string name="sm10">OCT</string>
     <string name="sm11">NOV</string>
     <string name="sm12">DEC</string>
+
+
+    <string name="home">Home</string>
+    <string name="missions">Missions</string>
+    <string name="add">Add</string>
+    <string name="settings">Settings</string>
+    <string name="logout">Logout</string>
+    <string name="menu_description">Select your theme</string>
+    <string name="news">News</string>
+    <string name="expense_report">Expense report</string>
+    <string name="leaves">Leaves</string>
+    <string name="salary_advance">Salary Advance</string>
+    <string name="profile">"My profile</string>
+    <string name="cra">CRA</string>
+    <string name="chat">Chat</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
 </resources>

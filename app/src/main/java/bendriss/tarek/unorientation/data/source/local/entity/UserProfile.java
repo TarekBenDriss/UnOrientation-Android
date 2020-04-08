@@ -10,6 +10,8 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.Date;
+
 
 /**
  * this class represents the user profile's model
@@ -22,98 +24,47 @@ public class UserProfile {
     @NonNull
     @PrimaryKey
     private int id;
-    @JsonProperty("culture")
-    private String culture;
-    @JsonProperty("firstName")
-    private String firstName;
-    @JsonProperty("lastName")
-    private String lastName;
-    @JsonProperty("userKey")
-    private String userKey;
-    @JsonProperty("email")
-    private String email;
-
-    @JsonProperty("timezone")
-    private String timezone;
-
-    @JsonProperty("offset")
-    private String offset;
-
-    @JsonProperty("organizationId")
-    private String organizationId;
-
-    @JsonProperty("profil")
-    private String profil;
-
-    @JsonProperty("type")
-    private String type;
+    @JsonProperty("genre")
+    private String genre;
+    @JsonProperty("cin")
+    private String cin;
+    @JsonProperty("nom")
+    private String nom;
+    @JsonProperty("prenom")
+    private String prenom;
+    @JsonProperty("username")
+    private String username;
     @JsonProperty("token")
     private String token;
+    @JsonProperty("adresse")
+    private String adresse;
+    @JsonProperty("tel")
+    private String tel;
+    @JsonProperty("email")
+    private String email;
+    @JsonProperty("dateNaissance")
+    private Date dateNaissance;
+    @JsonProperty("bac")
+    private String bac;
+    @JsonProperty("moyBac")
+    private float moyBac;
+    @JsonProperty("password")
+    private String password;
 
-    public String getToken() {
-        return token;
+    public String getAdresse() {
+        return adresse;
     }
 
-    public void setToken(String token) {
-        this.token = token;
+    public void setAdresse(String adresse) {
+        this.adresse = adresse;
     }
 
-    @NonNull
-    public int getId() {
-        return id;
+    public String getTel() {
+        return tel;
     }
 
-    public void setId(@NonNull int id) {
-        this.id = id;
-    }
-
-    @Override
-    public String toString() {
-        return "UserProfile{" +
-                "id=" + id +
-                ", culture='" + culture + '\'' +
-                ", firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", userKey='" + userKey + '\'' +
-                ", email='" + email + '\'' +
-                ", timezone='" + timezone + '\'' +
-                ", offset='" + offset + '\'' +
-                ", organizationId='" + organizationId + '\'' +
-                ", profil='" + profil + '\'' +
-                ", type='" + type + '\'' +
-                '}';
-    }
-
-    public String getCulture() {
-        return culture;
-    }
-
-    public void setCulture(String culture) {
-        this.culture = culture;
-    }
-
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
-    public String getUserKey() {
-        return userKey;
-    }
-
-    public void setUserKey(String userKey) {
-        this.userKey = userKey;
+    public void setTel(String tel) {
+        this.tel = tel;
     }
 
     public String getEmail() {
@@ -124,62 +75,107 @@ public class UserProfile {
         this.email = email;
     }
 
-    public String getTimezone() {
-        return timezone;
+    public Date getDateNaissance() {
+        return dateNaissance;
     }
 
-    public void setTimezone(String timezone) {
-        this.timezone = timezone;
+    public void setDateNaissance(Date dateNaissance) {
+        this.dateNaissance = dateNaissance;
     }
 
-    public String getOffset() {
-        return offset;
+    public String getBac() {
+        return bac;
     }
 
-    public void setOffset(String offset) {
-        this.offset = offset;
+    public void setBac(String bac) {
+        this.bac = bac;
     }
 
-    public String getOrganizationId() {
-        return organizationId;
+    public float getMoyBac() {
+        return moyBac;
     }
 
-    public void setOrganizationId(String organizationId) {
-        this.organizationId = organizationId;
+    public void setMoyBac(float moyBac) {
+        this.moyBac = moyBac;
     }
 
-    public String getProfil() {
-        return profil;
+    @Override
+    public String toString() {
+        return "UserProfile{" +
+                "id=" + id +
+                ", genre='" + genre + '\'' +
+                ", cin='" + cin + '\'' +
+                ", nom='" + nom + '\'' +
+                ", prenom='" + prenom + '\'' +
+                ", username='" + username + '\'' +
+                ", token='" + token + '\'' +
+                '}';
     }
 
-    public void setProfil(String profil) {
-        this.profil = profil;
+    public String getPassword() {
+        return password;
     }
 
-    public String getType() {
-        return type;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
-    public void setType(String type) {
-        this.type = type;
+    public int getId() {
+        return id;
     }
 
-    public UserProfile(@NonNull int id, String culture, String firstName, String lastName, String userKey, String email, String timezone, String offset, String organizationId, String profil, String type) {
-
+    public void setId(int id) {
         this.id = id;
-        this.culture = culture;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.userKey = userKey;
-        this.email = email;
-        this.timezone = timezone;
-        this.offset = offset;
-        this.organizationId = organizationId;
-        this.profil = profil;
-        this.type = type;
+    }
+
+    public String getGenre() {
+        return genre;
+    }
+
+    public void setGenre(String genre) {
+        this.genre = genre;
+    }
+
+    public String getCin() {
+        return cin;
+    }
+
+    public void setCin(String cin) {
+        this.cin = cin;
+    }
+
+    public String getNom() {
+        return nom;
+    }
+
+    public void setNom(String nom) {
+        this.nom = nom;
+    }
+
+    public String getPrenom() {
+        return prenom;
+    }
+
+    public void setPrenom(String prenom) {
+        this.prenom = prenom;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getToken() {
+        return token;
+    }
+
+    public void setToken(String token) {
+        this.token = token;
     }
 
     public UserProfile() {
-
     }
 }

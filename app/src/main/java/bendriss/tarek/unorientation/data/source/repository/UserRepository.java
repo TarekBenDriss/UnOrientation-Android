@@ -11,6 +11,8 @@ import bendriss.tarek.unorientation.data.source.local.entity.UserProfile;
 import bendriss.tarek.unorientation.data.source.remote.UserRemoteDataSource;
 import bendriss.tarek.unorientation.data.source.remote.params.LoginParams;
 import bendriss.tarek.unorientation.data.source.remote.response.LoginResponse;
+import bendriss.tarek.unorientation.data.source.remote.response.SignupResponse;
+import bendriss.tarek.unorientation.util.Logger;
 import io.reactivex.Single;
 
 /**
@@ -34,7 +36,7 @@ public class UserRepository {
      * @return
      */
     public Single<LoginResponse> login(LoginParams lp) {
-        return userRemoteDataSource.signinPok(lp)
+        return userRemoteDataSource.signin(lp)
                 // oon Succes do in other thread
                 .doOnSuccess(response -> {
 
@@ -42,11 +44,22 @@ public class UserRepository {
                         UserProfile user = new UserProfile();
 
                         user.setToken(response.getToken());
-                        user.setUserKey(response.getUserKey());
+                        //user.setUserKey(response.getUserKey());
                         userLocalDataSource.delete();
                         userLocalDataSource.deleteUserProfile();
                         userLocalDataSource.addConnectedUser(user);
                     }
+                });
+    }
+
+
+
+    public Single<SignupResponse> signup(UserProfile userProfile) {
+        return userRemoteDataSource.signup(userProfile)
+                // oon Succes do in other thread
+                .doOnSuccess(response -> {
+
+                    Logger.e("SignupResponse",userProfile.toString());
                 });
     }
 

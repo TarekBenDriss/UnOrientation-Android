@@ -4,8 +4,10 @@ package bendriss.tarek.unorientation.data.source.remote;
 import javax.inject.Inject;
 import javax.inject.Singleton;
 
+import bendriss.tarek.unorientation.data.source.local.entity.UserProfile;
 import bendriss.tarek.unorientation.data.source.remote.params.LoginParams;
 import bendriss.tarek.unorientation.data.source.remote.response.LoginResponse;
+import bendriss.tarek.unorientation.data.source.remote.response.SignupResponse;
 import bendriss.tarek.unorientation.data.source.remote.service.ServiceEndpoint;
 import io.reactivex.Single;
 
@@ -28,8 +30,12 @@ public class UserRemoteDataSource {
      * @param lp
      * @return
      */
-    public Single<LoginResponse> signinPok(LoginParams lp) {
-        return serviceEndpoint.login(lp);
+    public Single<LoginResponse> signin(LoginParams lp) {
+        return serviceEndpoint.login(lp.getUsername(),lp.getPassword());
+    }
+
+    public Single<SignupResponse> signup(UserProfile userProfile) {
+        return serviceEndpoint.signup(userProfile);
     }
 
 }

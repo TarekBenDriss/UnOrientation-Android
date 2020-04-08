@@ -2,21 +2,25 @@ package bendriss.tarek.unorientation.data.source.remote.service;
 
 
 
+import bendriss.tarek.unorientation.data.source.local.entity.UserProfile;
 import bendriss.tarek.unorientation.data.source.remote.params.LoginParams;
 import bendriss.tarek.unorientation.data.source.remote.response.LoginResponse;
+import bendriss.tarek.unorientation.data.source.remote.response.SignupResponse;
 import io.reactivex.Single;
 import retrofit2.http.Body;
 import retrofit2.http.POST;
+import retrofit2.http.Query;
 
 /**
  * this class represents the service endpoint
  */
 public interface ServiceEndpoint {
 
-    String BASE_URL = "https://unorientation.herokuapp.com/";
+    String BASE_URL = "http://5.135.52.75:8090/";
     //String BASE_URL = NetworkConstants.BASE_URL;
 
     String LOGIN = "login";
+    String SIGNUP = "signup/";
     String CODE_AGENCE = "api/mobile/users/key/{userKey}";
     String GET_EXPENSE_DETAILS = "/api/mobile/expenseReports/{expenseReportId}";
     String MANAGER = "api/mobile/managers/{id}";
@@ -41,6 +45,7 @@ public interface ServiceEndpoint {
     /*Params*/
 
     String USERNAME = "username";
+    String PASSWORD = "password";
     String AUTO = "auto";
     String USER_KEY = "userKey";
     String EXPENSE_REPORT_ID = "expenseReportId";
@@ -48,7 +53,10 @@ public interface ServiceEndpoint {
 
 
     @POST(LOGIN)
-    Single<LoginResponse> login(@Body LoginParams loginParams);
+    Single<LoginResponse> login(@Query(USERNAME) String username, @Query(PASSWORD) String password);
+
+    @POST(SIGNUP)
+    Single<SignupResponse> signup(@Body UserProfile userProfile);
 
     /*
     @GET(CODE_AGENCE)

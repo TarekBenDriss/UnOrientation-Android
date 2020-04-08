@@ -9,7 +9,8 @@ import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
 import bendriss.tarek.unorientation.modules.main.MainActivity
 import bendriss.tarek.unorientation.R
-import bendriss.tarek.unorientation.modules.login.LoginActivity
+import bendriss.tarek.unorientation.modules.landingpage.KotlinLandingPageActivity
+import bendriss.tarek.unorientation.modules.landingpage.LandingPageActivity
 import bendriss.tarek.unorientation.util.Constants
 
 class SplachScreenActivity : AppCompatActivity() {
@@ -27,7 +28,8 @@ class SplachScreenActivity : AppCompatActivity() {
 
 
         Handler().postDelayed({
-            val mainIntent2 = Intent(this, LoginActivity::class.java)
+            //val mainIntent2 = Intent(this, LandingPageActivity::class.java)
+            val mainIntent2 = Intent(this, KotlinLandingPageActivity::class.java)
             val dhasboard2Intent = Intent(this, MainActivity::class.java)
             val pref = preferences
             if (pref?.getBoolean(Constants.IS_LOGGED_IN, false) == false) this.startActivity(mainIntent2) else  //SplashScreenActivity.this.startActivity(dhasboardIntent);

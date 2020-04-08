@@ -8,8 +8,9 @@ import bendriss.tarek.unorientation.AppModule;
 import bendriss.tarek.unorientation.data.source.local.database.StorageModule;
 import bendriss.tarek.unorientation.data.source.remote.service.NetworkModule;
 import bendriss.tarek.unorientation.data.source.remote.service.RequestInterceptor;
-import bendriss.tarek.unorientation.modules.login.LoginActivity;
+import bendriss.tarek.unorientation.modules.login.LoginFragment;
 import bendriss.tarek.unorientation.modules.login.LoginViewModel;
+import bendriss.tarek.unorientation.modules.singup.SignupFragment;
 import dagger.Component;
 
 @Singleton
@@ -17,8 +18,9 @@ import dagger.Component;
 public interface DataComponent {
 
     void inject(LoginViewModel loginViewModel);
-    void inject(LoginActivity loginActivity);
     void inject(RequestInterceptor resquestInterceptor);
+    void inject(LoginFragment loginFragment);
+    void inject(SignupFragment signupFragment);
     /*
     void inject(BaseGlideModule baseGlideModule);
     void inject(LoginActivity loginActivity);

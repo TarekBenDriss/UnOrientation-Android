@@ -6,8 +6,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".pokmy.login.LoginActivity"
-        tools:showIn="@layout/activity_login"
+        tools:showIn="@layout/fragment_signup"
         >
 
         <ImageView
@@ -22,7 +21,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.36" />
+            app:layout_constraintGuide_percent="0.26" />
 
 
         <androidx.constraintlayout.widget.Guideline
@@ -49,7 +48,6 @@
             android:layout_marginBottom="8dp"
             android:src="@drawable/logopokmy"
             android:tint="@color/white"
-            app:layout_constraintBottom_toTopOf="@+id/loginEt"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/imageView"
@@ -117,26 +115,25 @@
             app:layout_constraintWidth_percent="0.78" />
 
         <EditText
-            android:id="@+id/codeAgence"
+            android:id="@+id/nomEt"
             android:layout_width="0dp"
             android:layout_height="@dimen/edit_text_height"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
-            android:drawableStart="@drawable/ic_agence_et"
+            android:drawableStart="@drawable/ic_password_et"
             android:drawablePadding="22dp"
             android:background="@drawable/edit_text_underlined"
-            android:drawableTint="@color/login_et_text_color"
-            android:inputType="textVisiblePassword"
             android:ems="10"
-            android:visibility="gone"
             android:fontFamily="@font/comfortaalight"
-            android:hint="@string/code_agence"
+            android:hint="@string/password"
+            android:inputType="text"
             android:paddingStart="24dp"
             android:paddingEnd="15dp"
             android:textColor="@color/login_et_text_color"
             android:textColorHint="@color/grispokmy"
             android:textCursorDrawable="@null"
+            android:drawableTint="@color/login_et_text_color"
             android:textSize="@dimen/edit_text_text_size"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHeight_percent="0.17"
@@ -145,18 +142,7 @@
             app:layout_constraintWidth_percent="0.78" />
 
 
-        <TextView
-            android:visibility="visible"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:fontFamily="@font/antidemibold"
-            android:text="@string/dont_have_account"
-            android:textColor="@color/dont_have_account"
-            android:textSize="14sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/login_btn" />
+
 
         <Button
             android:id="@+id/login_btn"
@@ -169,7 +155,7 @@
             android:background="@drawable/login_btn"
             android:backgroundTint="@color/login_btn"
             android:fontFamily="@font/comfortaabold"
-            android:text="@string/login"
+            android:text="@string/register"
             android:textAlignment="center"
             android:textColor="@color/white"
             android:textSize="@dimen/button_text"
@@ -177,12 +163,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHeight_percent="0.17"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/codeAgence"
+            app:layout_constraintTop_toBottomOf="@+id/nomEt"
             app:layout_constraintWidth_percent="0.78" />
-
-
-
-
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

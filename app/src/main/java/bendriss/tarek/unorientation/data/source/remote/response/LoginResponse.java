@@ -4,6 +4,8 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import bendriss.tarek.unorientation.data.source.local.entity.UserProfile;
+
 /**
  * this class represents the login response
  */
@@ -11,23 +13,23 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class LoginResponse {
 
-    @JsonProperty("__v")
-    private String __v;
+    @JsonProperty("type")
+    private String type;
     @JsonProperty("token")
     private String token;
-    @JsonProperty("userKey")
-    private String userKey;
+    @JsonProperty("user")
+    private UserProfile user;
     @JsonProperty("_id")
     private String _id;
     @JsonProperty("updated")
     private String updated;
 
     public String get__v() {
-        return __v;
+        return type;
     }
 
     public void set__v(String __v) {
-        this.__v = __v;
+        this.type = __v;
     }
 
     public String getToken() {
@@ -38,13 +40,7 @@ public class LoginResponse {
         this.token = token;
     }
 
-    public String getUserKey() {
-        return userKey;
-    }
 
-    public void setUserKey(String userKey) {
-        this.userKey = userKey;
-    }
 
     public String get_id() {
         return _id;
@@ -62,12 +58,28 @@ public class LoginResponse {
         this.updated = updated;
     }
 
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public UserProfile getUser() {
+        return user;
+    }
+
+    public void setUser(UserProfile user) {
+        this.user = user;
+    }
+
     @Override
     public String toString() {
         return "LoginPokResponse{" +
-                "__v='" + __v + '\'' +
+                "__v='" + type + '\'' +
                 ", token='" + token + '\'' +
-                ", userKey='" + userKey + '\'' +
+                ", user='" + user + '\'' +
                 ", _id='" + _id + '\'' +
                 ", updated=" + updated +
                 '}';

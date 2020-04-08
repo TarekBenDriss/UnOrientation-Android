@@ -19,7 +19,7 @@ import bendriss.tarek.unorientation.util.ApplicationUtils;
 @TypeConverters({Converters.class})
 public abstract class AppDatabase extends RoomDatabase {
 
-    static final int VERSION = 5;
+    static final int VERSION = 8;
     static final String NAME = ApplicationUtils.NAME + ".db";
 
     //public abstract UserPOKDao getUserPOKDao();

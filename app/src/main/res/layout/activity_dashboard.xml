@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grispokmy">
+
+
+    <LinearLayout
+        android:id="@+id/navigation2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_gravity="bottom"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.1"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/homeImg"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="12dp"
+        android:src="@drawable/icon_home_150"
+        android:tint="@color/pokmy"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@id/navigation2"
+        app:layout_constraintHeight_percent="0.04"
+        app:layout_constraintStart_toStartOf="@id/navigation2"
+        app:layout_constraintTop_toTopOf="@id/navigation2"
+        app:layout_constraintWidth_percent="0.25" />
+
+    <TextView
+        android:id="@+id/homeTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        android:fontFamily="@font/roboto_regular"
+        android:text="@string/home"
+        android:textColor="@color/pokmy"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/homeImg"
+        app:layout_constraintStart_toStartOf="@id/homeImg"
+        app:layout_constraintTop_toBottomOf="@id/homeImg" />
+
+    <ImageView
+        android:id="@+id/missionsImg"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="12dp"
+        android:src="@drawable/icon_mission_150"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@id/navigation2"
+        app:layout_constraintHeight_percent="0.04"
+        app:layout_constraintStart_toEndOf="@id/homeImg"
+        app:layout_constraintTop_toTopOf="@id/navigation2"
+        app:layout_constraintWidth_percent="0.25" />
+
+    <TextView
+        android:id="@+id/missionsTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        android:fontFamily="@font/roboto_regular"
+        android:text="@string/missions"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/missionsImg"
+        app:layout_constraintStart_toStartOf="@id/missionsImg"
+        app:layout_constraintTop_toBottomOf="@id/missionsImg" />
+
+    <ImageView
+        android:id="@+id/addImg"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="12dp"
+        android:src="@drawable/icon_add_150"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@id/navigation2"
+        app:layout_constraintHeight_percent="0.04"
+        app:layout_constraintStart_toEndOf="@id/missionsImg"
+        app:layout_constraintTop_toTopOf="@id/navigation2"
+        app:layout_constraintWidth_percent="0.25" />
+
+
+    <TextView
+        android:id="@+id/addTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        android:fontFamily="@font/roboto_regular"
+        android:text="@string/add"
+        android:textColor="@color/default_txt_color"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/addImg"
+        app:layout_constraintStart_toStartOf="@id/addImg"
+        app:layout_constraintTop_toBottomOf="@id/addImg" />
+
+
+    <ImageView
+        android:id="@+id/settingsImg"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="12dp"
+        android:src="@drawable/icon_settings_150"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@id/navigation2"
+        app:layout_constraintHeight_percent="0.04"
+        app:layout_constraintStart_toEndOf="@id/addImg"
+        app:layout_constraintTop_toTopOf="@id/navigation2"
+        app:layout_constraintWidth_percent="0.25" />
+
+
+    <TextView
+        android:id="@+id/settingsTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        android:fontFamily="@font/roboto_regular"
+        android:text="@string/settings"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/settingsImg"
+        app:layout_constraintStart_toStartOf="@id/settingsImg"
+        app:layout_constraintTop_toBottomOf="@id/settingsImg" />
+
+    <LinearLayout
+        android:id="@+id/nav1"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintWidth_percent="0.25"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/navigation2"
+        app:layout_constraintBottom_toBottomOf="@id/navigation2"/>
+
+    <LinearLayout
+        android:id="@+id/nav2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintWidth_percent="0.25"
+        app:layout_constraintStart_toEndOf="@id/nav1"
+        app:layout_constraintTop_toTopOf="@id/navigation2"
+        app:layout_constraintBottom_toBottomOf="@id/navigation2"/>
+
+
+    <LinearLayout
+        android:id="@+id/nav3"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintWidth_percent="0.25"
+        app:layout_constraintStart_toEndOf="@id/nav2"
+        app:layout_constraintTop_toTopOf="@id/navigation2"
+        app:layout_constraintBottom_toBottomOf="@id/navigation2"/>
+
+
+    <LinearLayout
+        android:id="@+id/nav4"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintWidth_percent="0.25"
+        app:layout_constraintStart_toEndOf="@id/nav3"
+        app:layout_constraintTop_toTopOf="@id/navigation2"
+        app:layout_constraintBottom_toBottomOf="@id/navigation2"/>
+    <!--
+        <FrameLayout
+            android:id="@+id/fragment"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="@+id/navigation2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    -->
+
+    <androidx.drawerlayout.widget.DrawerLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/drawer_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!-- This LinearLayout represents the contents of the screen  -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <!-- The ActionBar displayed at the top -->
+            <include
+                layout="@layout/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"/>
+
+            <FrameLayout
+                android:id="@+id/fragment"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_constraintBottom_toBottomOf="@+id/navigation2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </LinearLayout>
+
+        <!-- The navigation drawer that comes from the left -->
+        <!-- Note that `android:layout_gravity` needs to be set to 'start' -->
+        <!--             app:headerLayout="@layout/nav_header"  -->
+
+        <com.google.android.material.navigation.NavigationView
+            android:id="@+id/nvView"
+
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:background="@color/grispokmy2"
+            app:menu="@menu/drawer_view" />
+    </androidx.drawerlayout.widget.DrawerLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
