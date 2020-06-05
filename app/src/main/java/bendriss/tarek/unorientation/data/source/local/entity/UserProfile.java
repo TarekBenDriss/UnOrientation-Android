@@ -23,6 +23,7 @@ public class UserProfile {
 
     @NonNull
     @PrimaryKey
+    @JsonProperty("id")
     private int id;
     @JsonProperty("genre")
     private String genre;
@@ -34,6 +35,8 @@ public class UserProfile {
     private String prenom;
     @JsonProperty("username")
     private String username;
+    @JsonProperty("resetToken")
+    private String resetToken;
     @JsonProperty("token")
     private String token;
     @JsonProperty("adresse")
@@ -174,6 +177,14 @@ public class UserProfile {
 
     public void setToken(String token) {
         this.token = token;
+    }
+
+    public String getResetToken() {
+        return resetToken;
+    }
+
+    public void setResetToken(String resetToken) {
+        this.resetToken = resetToken;
     }
 
     public UserProfile() {

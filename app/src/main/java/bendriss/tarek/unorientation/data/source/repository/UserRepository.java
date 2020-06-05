@@ -42,8 +42,8 @@ public class UserRepository {
 
                     if (response != null && response.getToken() != null) {
                         UserProfile user = new UserProfile();
-
-                        user.setToken(response.getToken());
+                        user.setId(1);
+                        user.setToken(response.getUser().getToken());
                         //user.setUserKey(response.getUserKey());
                         userLocalDataSource.delete();
                         userLocalDataSource.deleteUserProfile();
@@ -58,7 +58,15 @@ public class UserRepository {
         return userRemoteDataSource.signup(userProfile)
                 // oon Succes do in other thread
                 .doOnSuccess(response -> {
+                    if (response != null && response.getUser().getToken() != null) {
+                        UserProfile user = new UserProfile();
 
+                        user.setToken(response.getUser().getToken());
+                        //user.setUserKey(response.getUserKey());
+                        userLocalDataSource.delete();
+                        userLocalDataSource.deleteUserProfile();
+                        userLocalDataSource.addConnectedUser(user);
+                    }
                     Logger.e("SignupResponse",userProfile.toString());
                 });
     }

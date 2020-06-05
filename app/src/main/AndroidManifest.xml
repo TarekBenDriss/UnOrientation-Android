@@ -11,12 +11,13 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".modules.landingpage.LandingPageActivity"></activity>
-        <activity android:name=".modules.landingpage.KotlinLandingPageActivity"></activity>
-        <activity android:name=".modules.singup.SignupActivity" />
+        <activity android:name=".modules.landingpage.LandingPageActivity"
+            android:windowSoftInputMode="adjustResize|stateHidden"
+            />
         <activity android:name=".modules.dashboard.DashboardActivity" />
-        <activity android:name=".modules.main.MainActivity" />
-        <activity android:name=".modules.splaschscreen.SplachScreenActivity">
+        <activity android:name=".modules.main.MainActivity"
+            />
+        <activity android:name=".modules.splashscreen.SplashScreenActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

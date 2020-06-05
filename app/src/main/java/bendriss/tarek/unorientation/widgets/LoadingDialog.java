@@ -1,5 +1,6 @@
 package bendriss.tarek.unorientation.widgets;
 
+import android.app.ActionBar;
 import android.app.Dialog;
 import android.content.Context;
 import android.graphics.Color;
@@ -54,6 +55,10 @@ public class LoadingDialog extends DialogFragment {
         if(dialog.getWindow() != null)
             dialog.getWindow().requestFeature(Window.FEATURE_NO_TITLE);
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+
+        int uiOptions = View.SYSTEM_UI_FLAG_FULLSCREEN;
+        dialog.getWindow().getDecorView().setSystemUiVisibility(uiOptions);
+
         return dialog;
     }
 

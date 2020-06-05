@@ -3,8 +3,12 @@
     <string name="adresse">Address</string>
     <string name="email">E-mail</string>
     <string name="password">Password</string>
+    <string name="fullname">Full Name</string>
+    <string name="bac">Bac</string>
+    <string name="moyennebac">Moyenne Bac</string>
     <string name="code_agence">Agency code</string>
     <string name="dont_have_account">Don\'t have an account? Register now...</string>
+    <string name="have_account">Have an account? Sign in now...</string>
     <string name="error_incorrect_password_msg">Please try again</string>
 
     <string name="login">CONNECT</string>
@@ -29,6 +33,9 @@
     <string name="empty" />
     <string name="ok">OK</string>
     <string name="required_fields">Please fill all required fields</string>
+    <string name="moy_valid">Please fill a valid moy</string>
+    <string name="username_valid">Username should contain 3 chars at least</string>
+    <string name="password_valid">Password should contain 4 chars at least</string>
 
     <string name="dialog_action_yes">Yes</string>
     <string name="dialog_action_no">No</string>
@@ -53,8 +60,15 @@
     <string name="logout">Logout</string>
     <string name="menu_description">Select your theme</string>
     <string name="news">News</string>
+    <string name="quiz">Quiz</string>
+    <string name="jobstats">Job stats</string>
+    <string name="guide">Guide</string>
+    <string name="historique">Historique</string>
     <string name="expense_report">Expense report</string>
     <string name="leaves">Leaves</string>
+    <string name="guideorientation">Guide d\'orientation</string>
+    <string name="result">Résultat</string>
+    <string name="formresult">Le résultat de votre quiz</string>
     <string name="salary_advance">Salary Advance</string>
     <string name="profile">"My profile</string>
     <string name="cra">CRA</string>

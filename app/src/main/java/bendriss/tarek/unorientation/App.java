@@ -24,17 +24,25 @@ public class App extends MultiDexApplication {
     private static LoadingDialog loader;
     public static Context context;
     public static String token,agence;
+    private static App instance;
 
     static {
         AppCompatDelegate.setCompatVectorFromResourcesEnabled(true);
     }
 
+
+
     public static DataComponent getDataComponent() {
         return dataComponent;
     }
 
+    public static Context getContext(){
+        return instance;
+    }
 
-
+    public static App getInstance() {
+        return instance;
+    }
 
     public static boolean isDialogShowed() {
         return loader.isAdded();
@@ -51,6 +59,7 @@ public class App extends MultiDexApplication {
         loader = LoadingDialog.newInstance();
         initAppComponent();
         app=this;
+        instance = this;
 
         LocalHelper.setLocale(this, Locale.getDefault().getDisplayLanguage());
     }

@@ -309,6 +309,10 @@ public class StringUtils {
         return TextUtils.isEmpty(str);
     }
 
+    public static boolean isLength(CharSequence str, int i) {
+        return str.length()==i;
+    }
+
     /**
      * this function checks if two strings are equals
      * @param a

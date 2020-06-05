@@ -53,7 +53,7 @@ public interface UserProfileDAO {
      * this function returns the connected user's token
      * @return
      */
-    @Query("SELECT token FROM userprofile ORDER BY id DESC LIMIT 1")
+    @Query("SELECT token FROM UserProfile ORDER BY id DESC LIMIT 1")
     String getConnectedUserPOKToken();
 
     /**

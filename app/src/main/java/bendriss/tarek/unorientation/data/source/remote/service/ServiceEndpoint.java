@@ -4,11 +4,15 @@ package bendriss.tarek.unorientation.data.source.remote.service;
 
 import bendriss.tarek.unorientation.data.source.local.entity.UserProfile;
 import bendriss.tarek.unorientation.data.source.remote.params.LoginParams;
+import bendriss.tarek.unorientation.data.source.remote.params.QuizParam;
 import bendriss.tarek.unorientation.data.source.remote.response.LoginResponse;
+import bendriss.tarek.unorientation.data.source.remote.response.QuizResponse;
 import bendriss.tarek.unorientation.data.source.remote.response.SignupResponse;
 import io.reactivex.Single;
 import retrofit2.http.Body;
+import retrofit2.http.GET;
 import retrofit2.http.POST;
+import retrofit2.http.Path;
 import retrofit2.http.Query;
 
 /**
@@ -50,6 +54,9 @@ public interface ServiceEndpoint {
     String USER_KEY = "userKey";
     String EXPENSE_REPORT_ID = "expenseReportId";
     String ID = "id";
+    String NAME = "name";
+    String GET_QUIZ = "quiz/{name}";
+    String GET_QUIZ_V2 = "quiz/get";
 
 
     @POST(LOGIN)
@@ -57,6 +64,13 @@ public interface ServiceEndpoint {
 
     @POST(SIGNUP)
     Single<SignupResponse> signup(@Body UserProfile userProfile);
+
+    @GET(GET_QUIZ)
+    Single<QuizResponse> getQuiz(@Path(NAME) String name);
+
+    @POST(GET_QUIZ_V2)
+    Single<QuizResponse> getQuizV2(@Body QuizParam quizParam);
+
 
     /*
     @GET(CODE_AGENCE)

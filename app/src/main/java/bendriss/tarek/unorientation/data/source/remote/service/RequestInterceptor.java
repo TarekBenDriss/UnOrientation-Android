@@ -3,7 +3,13 @@ package bendriss.tarek.unorientation.data.source.remote.service;
 
 
 
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
+
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.lifecycle.LiveData;
+import androidx.lifecycle.Observer;
 
 import java.io.IOException;
 
@@ -11,6 +17,8 @@ import javax.inject.Inject;
 
 import bendriss.tarek.unorientation.App;
 import bendriss.tarek.unorientation.data.source.local.UserLocalDataSource;
+import bendriss.tarek.unorientation.util.Constants;
+import bendriss.tarek.unorientation.util.Logger;
 import okhttp3.Headers;
 import okhttp3.HttpUrl;
 import okhttp3.Interceptor;
@@ -62,7 +70,7 @@ public class RequestInterceptor implements Interceptor {
         Headers.Builder headersBuilder = new Headers.Builder();
         headersBuilder.add(AUTHORIZATION, token);
         headersBuilder.add(ACCEPT, CONTENT_JSON);
-        headersBuilder.add(CONTENT_TYPE, CONTENT_JSON);
+        headersBuilder.add(CONTENT_TYPE, CONTENT_JSON+";charset=UTF-8");
         //headersBuilder.add(ACCEPT_ENCODING, ENCODING_GZIP);
         headersBuilder.add(ACCEPT_LANGUAGE, LANGUAGE_FR);
         headersBuilder.add(USER_AGENT, AGENT_THE_MOVIE_DB);
@@ -80,19 +88,30 @@ public class RequestInterceptor implements Interceptor {
 
     @Override
     public Response intercept(@NonNull Chain chain) throws IOException {
+        ;
+        SharedPreferences sharedpreferences = PreferenceManager.getDefaultSharedPreferences(App.getContext());
+        String t = sharedpreferences.getString(Constants.TOKEN,"xxx");
+        //Logger.e("TOKEN","token0 "+token);
 
         String token = "";
-        if(userLocalDataSource.getConnectedUserToken() != null)
+        token = "Bearer " + t;
+        /*
+        if(userLocalDataSource.getConnectedUserToken2() != null)
         {
-            token = "Bearer " + userLocalDataSource.getConnectedUserToken();
+            token = "Bearer " + userLocalDataSource.getConnectedUserToken2();
             //token = "Bearer " + App.token;
+            Logger.e("TOKEN","token1 "+token);
+
         }
             //token = "Bearer " + userLocalDataSource.getConnectedUserToken();
         else
         {
-            //token = "Bearer " + App.token;
+            token = "Bearer " + App.token;
+            Logger.e("TOKEN","token2 "+token);
+
             //Logger.i("token1"," mouch mriguel");
         }
+         */
 
 
 

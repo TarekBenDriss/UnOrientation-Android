@@ -2,12 +2,16 @@ package bendriss.tarek.unorientation.modules.dashboard
 
 import android.content.Intent
 import android.content.SharedPreferences
+import android.os.Build
 import android.os.Bundle
 import android.preference.PreferenceManager
+import android.view.Gravity
 import android.view.MenuItem
 import android.view.View
+import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toolbar
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
@@ -16,10 +20,15 @@ import bendriss.tarek.unorientation.R
 import bendriss.tarek.unorientation.base.BaseActivity
 import bendriss.tarek.unorientation.modules.landingpage.LandingPageActivity
 import bendriss.tarek.unorientation.modules.login.LoginViewModel
+import bendriss.tarek.unorientation.modules.quiz.QuizFragment
 import bendriss.tarek.unorientation.util.ActivityUtils
 import bendriss.tarek.unorientation.util.Constants
+import bendriss.tarek.unorientation.util.ItemClickEvent
+import bendriss.tarek.unorientation.util.Logger
 import com.google.android.material.navigation.NavigationView
 import io.reactivex.disposables.CompositeDisposable
+import org.greenrobot.eventbus.EventBus
+import org.greenrobot.eventbus.Subscribe
 
 class DashboardActivity : BaseActivity() {
 
@@ -33,6 +42,7 @@ class DashboardActivity : BaseActivity() {
     private var name: TextView? = null
     private  var role:TextView? = null
     private  var email:TextView? = null
+    private  var menu:ImageView? = null
     private var mDisposable: CompositeDisposable? = null
     var id: String? = null
     var id_mission:kotlin.String? = null
@@ -44,7 +54,24 @@ class DashboardActivity : BaseActivity() {
         setContentView(R.layout.activity_dashboard)
 
         ActivityUtils.hideStatusBar(this)
-        supportFragmentManager.beginTransaction().replace(R.id.fragment, DashboardFragment()).commit()
+        var type:String? = ""
+        type = if(intent.getStringExtra(Constants.TYPE)==null)
+            "kkk"
+        else
+            intent.getStringExtra(Constants.TYPE)
+
+        //supportFragmentManager.beginTransaction().replace(R.id.fragmentLanding, LoginFragment()).addToBackStack(null).commit()
+
+        Logger.e("TYPE",type)
+        if(type == Constants.SIGNIN || type =="kkk")
+            supportFragmentManager.beginTransaction().replace(R.id.fragment, DashboardFragment()).commit()
+        else
+            supportFragmentManager.beginTransaction().replace(R.id.fragment, QuizFragment()).commit()
+
+
+        EventBus.getDefault().register(this)
+
+
         init()
 
     }
@@ -57,7 +84,9 @@ class DashboardActivity : BaseActivity() {
         setupDrawerContent(nvDrawer)
         name = findViewById(R.id.name)
         role = findViewById(R.id.role)
+        role = findViewById(R.id.role)
         email = findViewById(R.id.email)
+        menu = findViewById(R.id.img)
 
 // Inflate the header view at runtime
         // Inflate the header view at runtime
@@ -67,6 +96,13 @@ class DashboardActivity : BaseActivity() {
         name = headerLayout?.findViewById<TextView>(R.id.name)
         role = headerLayout?.findViewById<TextView>(R.id.role)
         email = headerLayout?.findViewById<TextView>(R.id.email)
+
+        var x: NavigationView? = nvDrawer as NavigationView?
+        menu?.setOnClickListener{
+            Logger.e("DRAWER","OPEN")
+            x?.let { it1 -> mDrawer?.openDrawer(it1) }
+        }
+
 
 
     }
@@ -108,5 +144,23 @@ class DashboardActivity : BaseActivity() {
         //setTitle(menuItem.getTitle());
         mDrawer?.closeDrawers()
     }
+
+
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
+    @Subscribe
+    fun onEvent(event: ItemClickEvent)
+    {
+        if(event.date=="DRAWER")
+        {
+            Logger.e("DRAWER",event.date)
+            mDrawer?.openDrawer(Gravity.LEFT)
+        }
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        EventBus.getDefault().unregister(this)
+    }
+
 
 }

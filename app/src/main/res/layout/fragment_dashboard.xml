@@ -1,7 +1,11 @@
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:card_view="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    >
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -14,7 +18,8 @@
         android:scaleType="centerCrop"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        />
 
 
     <ImageView
@@ -60,12 +65,14 @@
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
             android:layout_marginBottom="8dp"
-            android:src="@drawable/logopokmy"
+            android:src="@drawable/logo_unorientation"
             android:tint="@color/white"
             app:layout_constraintBottom_toBottomOf="@id/layout"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            android:transitionName="logoTransition"
+            />
 
 
         <ImageView
@@ -222,7 +229,7 @@
                 android:dividerHeight="0.0px"
                 android:elevation="10dp"
                 android:outlineSpotShadowColor="@color/black"
-                app:layout_constraintDimensionRatio="1:0.74"
+                app:layout_constraintDimensionRatio="1:0.89"
                 app:layout_constraintEnd_toStartOf="@id/l2"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintHorizontal_chainStyle="packed"
@@ -276,7 +283,7 @@
                         android:layout_marginBottom="3dp"
                         android:fontFamily="@font/comfortaaregular"
 
-                        android:text="@string/news"
+                        android:text="@string/quiz"
                         android:textColor="@color/hometxt"
                         android:textSize="14sp"
                         app:layout_constraintBottom_toBottomOf="parent"
@@ -302,7 +309,7 @@
                 android:divider="@android:color/transparent"
                 android:dividerHeight="0.0px"
                 android:elevation="10dp"
-                app:layout_constraintDimensionRatio="1:0.74"
+                app:layout_constraintDimensionRatio="1:0.89"
                 app:layout_constraintEnd_toStartOf="@id/l3"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toEndOf="@+id/l2"
@@ -353,7 +360,7 @@
                         android:layout_marginStart="8dp"
                         android:layout_marginEnd="8dp"
                         android:fontFamily="@font/comfortaaregular"
-                        android:text="@string/missions"
+                        android:text="@string/jobstats"
                         android:textColor="@color/hometxt"
                         android:textSize="14sp"
                         app:layout_constraintBottom_toBottomOf="parent"
@@ -382,7 +389,7 @@
                 android:divider="@android:color/transparent"
                 android:dividerHeight="0.0px"
                 android:elevation="10dp"
-                app:layout_constraintDimensionRatio="1:0.74"
+                app:layout_constraintDimensionRatio="1:0.89"
                 app:layout_constraintEnd_toStartOf="@+id/l2"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintHorizontal_chainStyle="packed"
@@ -435,7 +442,7 @@
                         android:layout_marginStart="8dp"
                         android:layout_marginEnd="8dp"
                         android:fontFamily="@font/comfortaaregular"
-                        android:text="@string/expense_report"
+                        android:text="@string/guide"
                         android:textColor="@color/hometxt"
                         android:textSize="14sp"
                         app:layout_constraintBottom_toBottomOf="parent"
@@ -463,7 +470,7 @@
                 android:divider="@android:color/transparent"
                 android:dividerHeight="0.0px"
                 android:elevation="10dp"
-                app:layout_constraintDimensionRatio="1:0.74"
+                app:layout_constraintDimensionRatio="1:0.89"
                 app:layout_constraintEnd_toStartOf="@id/l3"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toEndOf="@+id/l2"
@@ -515,7 +522,7 @@
                         android:layout_marginStart="8dp"
                         android:layout_marginEnd="8dp"
                         android:fontFamily="@font/comfortaaregular"
-                        android:text="@string/leaves"
+                        android:text="@string/historique"
                         android:textColor="@color/hometxt"
                         android:textSize="14sp"
                         app:layout_constraintBottom_toBottomOf="parent"
@@ -552,7 +559,8 @@
                 app:layout_goneMarginTop="0dp"
                 card_view:cardCornerRadius="12dp"
                 card_view:cardElevation="2dp"
-                card_view:cardPreventCornerOverlap="false">
+                card_view:cardPreventCornerOverlap="false"
+                >
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
@@ -595,7 +603,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/comfortaaregular"
-                        android:text="@string/salary_advance"
+                        android:text="@string/profile"
                         android:textColor="@color/hometxt"
                         android:textSize="14sp"
                         app:layout_constraintBottom_toBottomOf="parent"
@@ -611,6 +619,7 @@
 
 
             <androidx.cardview.widget.CardView
+                android:visibility="invisible"
                 android:id="@+id/cv6"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
@@ -708,6 +717,7 @@
                 card_view:cardCornerRadius="12dp"
                 card_view:cardElevation="2dp"
                 app:layout_goneMarginTop="0dp"
+                android:visibility="invisible"
                 card_view:cardPreventCornerOverlap="false">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
@@ -866,3 +876,4 @@
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

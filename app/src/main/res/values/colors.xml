@@ -42,7 +42,8 @@
     <color name="colorAccentLight">#eb282a</color>
     <color name="nom_chat">#444492</color>
     <color name="date_chat">#43566A</color>
-    <color name="gris_chat">#606060</color>
+    <color name="gris_chat">#C7C7C7</color>
+    <color name="gris_chat2">#606060</color>
     <color name="bleu_fonce">#152f84</color>
     <color name="bleu_edit_text">#43566a</color>
     <color name="outgoing_msg_color">#141a3194</color>

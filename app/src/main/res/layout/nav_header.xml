@@ -12,18 +12,19 @@
     <ImageView
         android:id="@+id/img"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="4dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-        android:src="@drawable/logopokmy"
+        android:src="@drawable/logo_unorientation"
         android:tint="@color/white"
         app:layout_constraintBottom_toTopOf="@+id/loginEt"
+        app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/imageView"
-        app:layout_constraintWidth_percent="0.5" />
+        app:layout_constraintWidth_percent="0.35" />
 
     <TextView
         android:id="@+id/name"
@@ -34,11 +35,11 @@
         android:text="Name"
         android:textColor="@android:color/white"
         android:textSize="17sp"
+        android:layout_marginStart="24dp"
         app:layout_constraintBottom_toTopOf="@+id/email"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/profile_img"
+        app:layout_constraintStart_toEndOf="@id/profile_img"
+        app:layout_constraintTop_toTopOf="@+id/profile_img"
         app:layout_constraintVertical_chainStyle="spread" />
 
     <TextView
@@ -52,8 +53,8 @@
         android:textColor="@android:color/white"
         android:textSize="14sp"
         android:visibility="invisible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintTop_toTopOf="@id/profile_img"
+        app:layout_constraintStart_toEndOf="@id/profile_img"/>
 
     <TextView
         android:id="@+id/email"
@@ -64,10 +65,10 @@
         android:text="Email"
         android:textColor="@android:color/white"
         android:textSize="14sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="24dp"
+        app:layout_constraintBottom_toBottomOf="@id/profile_img"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@id/profile_img"
         app:layout_constraintTop_toBottomOf="@+id/name" />
 
     <de.hdodenhof.circleimageview.CircleImageView
@@ -78,9 +79,10 @@
         android:scaleType="centerCrop"
         android:src="@color/white"
         app:civ_border_width="0dp"
-        app:layout_constraintDimensionRatio="h1:1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHeight_percent="0.3"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="h,1:1"
+        app:layout_constraintHeight_percent="0.25"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/img" />
 

@@ -35,7 +35,7 @@
     <ImageView
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:src="@drawable/splash"
+        android:src="@drawable/loginfond"
         android:scaleType="centerCrop"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -44,5 +44,17 @@
         android:contentDescription="@string/img_description"
         />
 
-
+    <ImageView
+        android:id="@+id/logoImg"
+        android:transitionName="logoTransition"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:src="@drawable/logo_unorientation"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintWidth_percent="0.3"
+        android:tint="@color/white"
+        />
 </androidx.constraintlayout.widget.ConstraintLayout>

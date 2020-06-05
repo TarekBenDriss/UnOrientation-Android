@@ -7,6 +7,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:showIn="@layout/fragment_signup"
+        android:id="@+id/mainLayout"
         >
 
         <ImageView
@@ -40,23 +41,27 @@
 
 
         <ImageView
+            android:id="@+id/logo"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="32dp"
             android:layout_marginEnd="8dp"
-            android:layout_marginBottom="8dp"
-            android:src="@drawable/logopokmy"
+            android:src="@drawable/logo_unorientation"
             android:tint="@color/white"
+            app:layout_constraintDimensionRatio="w,1:1"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/imageView"
-            app:layout_constraintWidth_percent="0.5" />
+            app:layout_constraintWidth_percent="0.3"
+            android:transitionName="logoTransition"
+            />
 
 
         <EditText
 
 
+            android:transitionName="loginTransition"
 
             android:id="@+id/loginEt"
             android:layout_width="0dp"
@@ -88,6 +93,7 @@
         <EditText
             android:id="@+id/passwordEt"
 
+            android:transitionName="passwordTransition"
 
             android:layout_width="0dp"
             android:layout_height="@dimen/edit_text_height"
@@ -121,14 +127,14 @@
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
-            android:drawableStart="@drawable/ic_password_et"
-            android:drawablePadding="22dp"
+            android:drawableStart="@drawable/ic_fullname"
+            android:drawablePadding="25dp"
             android:background="@drawable/edit_text_underlined"
             android:ems="10"
             android:fontFamily="@font/comfortaalight"
-            android:hint="@string/password"
+            android:hint="@string/fullname"
             android:inputType="text"
-            android:paddingStart="24dp"
+            android:paddingStart="28dp"
             android:paddingEnd="15dp"
             android:textColor="@color/login_et_text_color"
             android:textColorHint="@color/grispokmy"
@@ -143,9 +149,67 @@
 
 
 
+        <EditText
+            android:id="@+id/bacEt"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/edit_text_height"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:drawableStart="@drawable/ic_bac"
+            android:drawablePadding="22dp"
+            android:background="@drawable/edit_text_underlined"
+            android:ems="10"
+            android:fontFamily="@font/comfortaalight"
+            android:hint="@string/bac"
+            android:inputType="text"
+            android:paddingStart="28dp"
+            android:paddingEnd="15dp"
+            android:textColor="@color/login_et_text_color"
+            android:textColorHint="@color/grispokmy"
+            android:textCursorDrawable="@null"
+            android:drawableTint="@color/login_et_text_color"
+            android:textSize="@dimen/edit_text_text_size"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHeight_percent="0.17"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/nomEt"
+            app:layout_constraintWidth_percent="0.78"
+            android:drawableRight="@drawable/ic_bac"
+            />
+
+        <EditText
+            android:id="@+id/bacMoyEt"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/edit_text_height"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/edit_text_underlined"
+            android:drawableStart="@drawable/ic_moyenne"
+            android:drawablePadding="25dp"
+            android:drawableTint="@color/login_et_text_color"
+            android:ems="10"
+            android:fontFamily="@font/comfortaalight"
+            android:hint="@string/moyennebac"
+            android:inputType="numberDecimal"
+            android:paddingStart="32dp"
+            android:paddingEnd="15dp"
+            android:textColor="@color/login_et_text_color"
+            android:textColorHint="@color/grispokmy"
+            android:textCursorDrawable="@null"
+            android:textSize="@dimen/edit_text_text_size"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHeight_percent="0.17"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/bacEt"
+            app:layout_constraintWidth_percent="0.78" />
+
+
+
 
         <Button
-            android:id="@+id/login_btn"
+            android:id="@+id/signupBtn"
             style="?android:attr/borderlessButtonStyle"
             android:layout_width="0dp"
             android:layout_height="@dimen/edit_text_height"
@@ -163,8 +227,26 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHeight_percent="0.17"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/nomEt"
-            app:layout_constraintWidth_percent="0.78" />
+            app:layout_constraintTop_toBottomOf="@+id/bacMoyEt"
+            app:layout_constraintWidth_percent="0.78"
+            android:transitionName="btnTransition"
+            />
+
+
+        <TextView
+            android:id="@+id/loginTxt"
+            android:visibility="visible"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:fontFamily="@font/antidemibold"
+            android:text="@string/dont_have_account"
+            android:textColor="@color/dont_have_account"
+            android:textSize="14sp"
+            android:transitionName="txtTransition"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/signupBtn" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
