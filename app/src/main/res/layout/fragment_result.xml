@@ -66,7 +66,7 @@
                 android:layout_marginStart="48px"
                 android:layout_marginEnd="48px"
                 android:layout_width="0dp"
-                android:layout_height="0dp"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="36dp"
                 android:backgroundTint="@color/white"
                 android:clipChildren="false"
@@ -92,45 +92,144 @@
                     android:layout_height="match_parent">
 
                     <TextView
-                        android:animateLayoutChanges="true"
                         android:id="@+id/questionTxt"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:fontFamily="@font/comfortaabold"
                         android:layout_marginTop="16dp"
+                        android:animateLayoutChanges="true"
+                        android:fontFamily="@font/comfortaabold"
+                        android:text="@string/formresult"
                         android:textColor="@color/gradientpokmy"
                         android:textSize="24sp"
-                        android:text="@string/formresult"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
-                        />
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
 
 
                     <TextView
-                        android:animateLayoutChanges="true"
-                        android:id="@+id/resultTxt"
-                        android:textAlignment="textStart"
+                        android:id="@+id/keywordTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:layout_marginStart="8dp"
+                        android:layout_marginTop="32dp"
                         android:layout_marginEnd="8dp"
+                        android:animateLayoutChanges="true"
+                        android:fontFamily="@font/comfortaabold"
+                        android:text="@string/keyword"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/black"
+                        android:textSize="18sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/questionTxt" />
+
+                    <TextView
+                        android:id="@+id/resultTxt"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:fontFamily="@font/comfortaabold"
+                        android:layout_marginStart="8dp"
                         android:layout_marginTop="32dp"
+                        android:layout_marginEnd="8dp"
+                        android:animateLayoutChanges="true"
+                        android:fontFamily="@font/comfortaabold"
+                        android:text=""
+                        android:textAlignment="textStart"
                         android:textColor="@color/grispokmysplash"
                         android:textSize="18sp"
-                        android:text="@string/formresult"
-                        app:layout_constraintTop_toBottomOf="@id/questionTxt"
-                        app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
-                        />
+                        app:layout_constraintStart_toEndOf="@id/keywordTitle"
+                        app:layout_constraintTop_toBottomOf="@id/questionTxt" />
 
 
+                    <TextView
+                        android:id="@+id/codeTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="24dp"
+                        android:layout_marginEnd="8dp"
+                        android:animateLayoutChanges="true"
+                        android:fontFamily="@font/comfortaabold"
+                        android:text="Code : "
+                        android:textAlignment="textStart"
+                        android:textColor="@color/black"
+                        android:textSize="18sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/resultTxt" />
+
+                    <TextView
+                        android:id="@+id/code"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="8dp"
+                        android:animateLayoutChanges="true"
+                        android:fontFamily="@font/comfortaabold"
+                        android:text=""
+                        android:textAlignment="textStart"
+                        android:textColor="@color/grispokmysplash"
+                        android:textSize="18sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="@id/resultTxt"
+                        app:layout_constraintTop_toTopOf="@id/codeTitle" />
 
 
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/card"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_marginTop="24dp"
+                        app:layout_constraintDimensionRatio="1:1"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/code"
+                        app:layout_constraintWidth_percent="0.5">
+
+                        <ImageView
+                            android:id="@+id/resultImg"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            app:layout_constraintDimensionRatio="1:1"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/code"
+                            app:layout_constraintWidth_percent="0.5" />
 
 
+                    </androidx.cardview.widget.CardView>
 
+                    <Button
+                        android:id="@+id/offresBtn"
+                        android:layout_width="120dp"
+                        android:layout_height="35dp"
+                        android:background="@drawable/bm_btn"
+                        android:text="Offres d'emploi"
+                        android:textColor="@color/white"
+                        android:textSize="13dp"
+
+                        android:layout_marginTop="24dp"
+                        android:layout_marginBottom="16dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.5"
+
+                        app:layout_constraintStart_toEndOf="@+id/homeBtn"
+                        app:layout_constraintTop_toBottomOf="@id/card" />
+
+
+                    <Button
+                        android:id="@+id/homeBtn"
+                        android:layout_width="120dp"
+                        android:layout_height="35dp"
+                        android:background="@drawable/bm_btn"
+                        android:layout_marginTop="24dp"
+                        android:layout_marginBottom="16dp"
+                        android:text="Accueil"
+                        android:textColor="@color/white"
+                        android:textSize="13dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/offresBtn"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/card" />
 
 
                 </androidx.constraintlayout.widget.ConstraintLayout>

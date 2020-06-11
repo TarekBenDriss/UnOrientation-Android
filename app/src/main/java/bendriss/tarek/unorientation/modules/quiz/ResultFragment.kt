@@ -1,25 +1,28 @@
 package bendriss.tarek.unorientation.modules.quiz
 
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.os.Handler
 import android.preference.PreferenceManager
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProviders
 import bendriss.tarek.unorientation.App
 import bendriss.tarek.unorientation.R
 import bendriss.tarek.unorientation.data.source.remote.params.QuizParam
 import bendriss.tarek.unorientation.data.source.remote.response.QuizResponse
-import bendriss.tarek.unorientation.databinding.FragmentQuizBinding
 import bendriss.tarek.unorientation.databinding.FragmentResultBinding
 import bendriss.tarek.unorientation.modules.dashboard.DashboardActivity
+import bendriss.tarek.unorientation.modules.jobstats.JobStatsFragment
 import bendriss.tarek.unorientation.util.AlertDialogUtils
 import bendriss.tarek.unorientation.util.Constants
 import bendriss.tarek.unorientation.util.Logger
+import com.bumptech.glide.Glide
+import com.bumptech.glide.request.RequestOptions
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.observers.DisposableSingleObserver
@@ -42,6 +45,9 @@ class ResultFragment : Fragment() {
     private var mQuizViewModel: QuizViewModel? = null
     private var resultTxt:TextView? = null
 
+    private var preferences: SharedPreferences? = null
+    private var editor: SharedPreferences.Editor? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -56,12 +62,24 @@ class ResultFragment : Fragment() {
 
         initDataBinding()
         val sharedpreferences = PreferenceManager.getDefaultSharedPreferences(context)
+        preferences = PreferenceManager.getDefaultSharedPreferences(context)
+        editor = preferences?.edit()
 
         var quizParam = QuizParam()
         quizParam.name = sharedpreferences.getString("quizName", "")
         quizParam.finalQuiz = "true"
         quizParam.userId = sharedpreferences.getInt(Constants.USER_ID, 0)
         getQuiz(quizParam)
+
+
+        mBinding?.homeBtn?.setOnClickListener(View.OnClickListener {
+            activity?.onBackPressed()
+        })
+
+        mBinding?.offresBtn?.setOnClickListener(View.OnClickListener {
+            fragmentManager?.beginTransaction()?.replace(R.id.fragment, JobStatsFragment())?.commit()
+""        })
+
 
         return mBinding?.root
     }
@@ -88,7 +106,17 @@ class ResultFragment : Fragment() {
                     override fun onSuccess(response: QuizResponse) {
                         Handler().postDelayed({
                             Logger.e("Get Quiz Response", response.toString())
-                            resultTxt?.text = response.name
+                            resultTxt?.text = response.question
+                            mBinding?.code?.text = response.name
+
+                            Glide.with(context!!).applyDefaultRequestOptions(RequestOptions().disallowHardwareConfig())
+                                    .load("http://5.135.52.75/104.png")
+                                    .apply(RequestOptions.circleCropTransform())
+                                    //.placeholder(R.drawable.empty)
+                                    .into(mBinding?.resultImg!!)
+
+                            editor?.putString("Keyword",response.question)
+                            editor?.apply()
 
                         } , 500)
 

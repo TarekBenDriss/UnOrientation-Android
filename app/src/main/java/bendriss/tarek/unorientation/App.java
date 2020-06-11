@@ -4,6 +4,7 @@ import android.app.Application;
 import android.content.Context;
 
 import androidx.appcompat.app.AppCompatDelegate;
+import androidx.multidex.MultiDex;
 import androidx.multidex.MultiDexApplication;
 
 
@@ -91,6 +92,8 @@ public class App extends MultiDexApplication {
 
 
     }
+
+
 
     @Override
     public void onTerminate() {

@@ -2,11 +2,16 @@ package bendriss.tarek.unorientation.data.source.remote.service;
 
 
 
+import java.util.List;
+
 import bendriss.tarek.unorientation.data.source.local.entity.UserProfile;
 import bendriss.tarek.unorientation.data.source.remote.params.LoginParams;
 import bendriss.tarek.unorientation.data.source.remote.params.QuizParam;
+import bendriss.tarek.unorientation.data.source.remote.params.ScrapParam;
+import bendriss.tarek.unorientation.data.source.remote.response.HistoriqueResponse;
 import bendriss.tarek.unorientation.data.source.remote.response.LoginResponse;
 import bendriss.tarek.unorientation.data.source.remote.response.QuizResponse;
+import bendriss.tarek.unorientation.data.source.remote.response.ScrapResponse;
 import bendriss.tarek.unorientation.data.source.remote.response.SignupResponse;
 import io.reactivex.Single;
 import retrofit2.http.Body;
@@ -57,6 +62,8 @@ public interface ServiceEndpoint {
     String NAME = "name";
     String GET_QUIZ = "quiz/{name}";
     String GET_QUIZ_V2 = "quiz/get";
+    String GET_HISTORIQUE = "quiz/historique/{id}/";
+    String GET_SCRAP = "scrap/";
 
 
     @POST(LOGIN)
@@ -70,6 +77,12 @@ public interface ServiceEndpoint {
 
     @POST(GET_QUIZ_V2)
     Single<QuizResponse> getQuizV2(@Body QuizParam quizParam);
+
+    @GET(GET_HISTORIQUE)
+    Single<List<HistoriqueResponse>> getHistorique(@Path(ID) int id);
+
+    @POST(GET_SCRAP)
+    Single<ScrapResponse> getScrap(@Body ScrapParam param);
 
 
     /*

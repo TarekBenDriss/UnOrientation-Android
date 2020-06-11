@@ -1,10 +1,9 @@
-package bendriss.tarek.unorientation.modules.quiz;
+package bendriss.tarek.unorientation.modules.jobstats;
 
 
 import android.app.Application;
 
 import androidx.annotation.NonNull;
-import androidx.lifecycle.LiveData;
 
 import java.util.List;
 
@@ -12,15 +11,13 @@ import javax.inject.Inject;
 
 import bendriss.tarek.unorientation.App;
 import bendriss.tarek.unorientation.base.BaseViewModel;
-import bendriss.tarek.unorientation.data.source.local.entity.UserProfile;
-import bendriss.tarek.unorientation.data.source.remote.params.LoginParams;
 import bendriss.tarek.unorientation.data.source.remote.params.QuizParam;
+import bendriss.tarek.unorientation.data.source.remote.params.ScrapParam;
 import bendriss.tarek.unorientation.data.source.remote.response.HistoriqueResponse;
-import bendriss.tarek.unorientation.data.source.remote.response.LoginResponse;
 import bendriss.tarek.unorientation.data.source.remote.response.QuizResponse;
-import bendriss.tarek.unorientation.data.source.remote.response.SignupResponse;
+import bendriss.tarek.unorientation.data.source.remote.response.ScrapResponse;
 import bendriss.tarek.unorientation.data.source.repository.QuizRepository;
-import bendriss.tarek.unorientation.data.source.repository.UserRepository;
+import bendriss.tarek.unorientation.data.source.repository.ScrapRepository;
 import io.reactivex.Single;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.schedulers.Schedulers;
@@ -28,13 +25,13 @@ import io.reactivex.schedulers.Schedulers;
 /**
  this class represents the login view model
  */
-public class QuizViewModel extends BaseViewModel {
+public class ScrapViewModel extends BaseViewModel {
 
     @Inject
-    QuizRepository mRepository;
+    ScrapRepository mRepository;
 
     // constructor
-    public QuizViewModel(@NonNull Application application) {
+    public ScrapViewModel(@NonNull Application application) {
         super(application);
         App.getDataComponent().inject(this);
     }
@@ -68,30 +65,14 @@ public class QuizViewModel extends BaseViewModel {
 
 
 
-    public Single<QuizResponse> getQuiz(String name) {
-        return mRepository.getQuiz(name)
+    public Single<ScrapResponse> getScrap(ScrapParam param) {
+        return mRepository.getScrap(param)
                 //
                 .subscribeOn(Schedulers.computation())
                 //
                 .observeOn(AndroidSchedulers.mainThread());
     }
 
-    public Single<QuizResponse> getQuizV2(QuizParam quizParam) {
-        return mRepository.getQuizV2(quizParam)
-                //
-                .subscribeOn(Schedulers.computation())
-                //
-                .observeOn(AndroidSchedulers.mainThread());
-    }
-
-
-    public Single<List<HistoriqueResponse>> getHistorique(int userId) {
-        return mRepository.getHistorique(userId)
-                //
-                .subscribeOn(Schedulers.computation())
-                //
-                .observeOn(AndroidSchedulers.mainThread());
-    }
 
 
 }

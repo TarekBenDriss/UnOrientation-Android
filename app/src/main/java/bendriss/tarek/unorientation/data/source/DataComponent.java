@@ -8,6 +8,7 @@ import bendriss.tarek.unorientation.AppModule;
 import bendriss.tarek.unorientation.data.source.local.database.StorageModule;
 import bendriss.tarek.unorientation.data.source.remote.service.NetworkModule;
 import bendriss.tarek.unorientation.data.source.remote.service.RequestInterceptor;
+import bendriss.tarek.unorientation.modules.jobstats.ScrapViewModel;
 import bendriss.tarek.unorientation.modules.login.LoginFragment;
 import bendriss.tarek.unorientation.modules.login.LoginViewModel;
 import bendriss.tarek.unorientation.modules.quiz.QuizFragment;
@@ -25,16 +26,5 @@ public interface DataComponent {
     void inject(SignupFragment signupFragment);
     void inject(QuizFragment quizFragment);
     void inject(QuizViewModel quizViewModel);
-    /*
-    void inject(BaseGlideModule baseGlideModule);
-    void inject(LoginActivity loginActivity);
-    void inject(NewsViewModel newsViewModel);
-    void inject(SalaryViewModel salaryViewModel);
-    void inject(LeavesViewModel leavesViewModel);
-    void inject(ExpensesViewModel expensesViewModel);
-    void inject(MissionsViewModel missionsViewModel);
-    void inject(BusinessManagerViewModel businessManagerViewModel);
-    void inject(SplashScreenActivity splashScreenActivity);
-    void inject(ProfileViewModel profileViewModel);
-     */
+    void inject(ScrapViewModel scrapViewModel);
 }

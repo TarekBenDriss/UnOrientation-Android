@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools">
+
+<data>
+
+    <variable
+        name="job"
+        type="bendriss.tarek.unorientation.modules.jobstats.JobItem"/>
+</data>
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_marginTop="12dp"
+    android:layout_width="270dp"
+    android:layout_height="270dp">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card"
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+
+        android:clickable="false"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:onLongClick="@{(view) ->  job.onLongClick(view)}"
+        android:onClick="@{(view) ->  job.onClick(view)}"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="4dp"
+        app:cardElevation="4dp"
+        app:cardPreventCornerOverlap="false"
+        app:cardUseCompatPadding="false"
+        android:paddingTop="4dp"
+        android:paddingStart="4dp"
+        android:paddingEnd="4dp"
+        >
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="130dp"
+
+            tools:background="#0F0">
+
+            <TextView
+                android:id="@+id/job_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/comfortaabold"
+                android:text="@{job.job.name}"
+                tools:text="app developer"
+                android:textColor="@color/orange_edit_text"
+                android:layout_marginEnd="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:textAlignment="textStart"
+                android:textSize="15sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_chainStyle="packed"
+                 />
+
+
+            <ImageView
+                android:id="@+id/locationIcon"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginTop="8dp"
+                android:src="@drawable/ic_location"
+                app:layout_constraintStart_toStartOf="@id/job_title"
+                app:layout_constraintTop_toBottomOf="@id/job_title"
+
+                />
+
+            <TextView
+                android:id="@+id/locationTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="6dp"
+                android:fontFamily="@font/comfortaalight"
+                android:gravity="center"
+                android:textColor="@color/gris_fonce"
+                android:textSize="11sp"
+                android:text="@{job.job.location}"
+                tools:text="12-12-2012"
+                app:layout_constraintWidth_percent="0.30"
+                app:layout_constraintBottom_toBottomOf="@id/locationIcon"
+                app:layout_constraintTop_toTopOf="@id/locationIcon"
+                app:layout_constraintStart_toEndOf="@id/locationIcon"
+                 />
+
+
+            <ImageView
+                android:id="@+id/companyIcon"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginTop="2dp"
+                android:src="@drawable/ic_company"
+                app:layout_constraintStart_toStartOf="@id/job_title"
+                app:layout_constraintTop_toBottomOf="@id/locationIcon"
+                android:layout_marginBottom="16dp"
+                />
+
+            <TextView
+                android:id="@+id/companyTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="6dp"
+                android:fontFamily="@font/comfortaalight"
+                android:gravity="center"
+                android:textColor="@color/gris_fonce"
+                android:textSize="11sp"
+                android:text="@{job.job.company}"
+                tools:text="tunis"
+                app:layout_constraintWidth_percent="0.30"
+                app:layout_constraintBottom_toBottomOf="@id/companyIcon"
+                app:layout_constraintTop_toTopOf="@id/companyIcon"
+                app:layout_constraintStart_toEndOf="@id/companyIcon"
+                />
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/card"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

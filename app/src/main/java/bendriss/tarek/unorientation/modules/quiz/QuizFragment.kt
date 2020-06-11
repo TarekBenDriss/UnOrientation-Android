@@ -85,8 +85,8 @@ class QuizFragment : BaseFragment(), Animation.AnimationListener{
         EventBus.getDefault().register(this)
 
         var quizParam:QuizParam = QuizParam()
-        questionName = "eco"
-        quizParam.name = "eco"
+        questionName = ""
+        quizParam.name = ""
         quizParam.finalQuiz = "false"
         //getQuiz("0")
         getQuiz(quizParam)
@@ -247,21 +247,19 @@ class QuizFragment : BaseFragment(), Animation.AnimationListener{
     @Subscribe
     fun onEvent(event:ItemClickEvent )
     {
-        /*
+
         if(firstTime)
         {
-            questionName+=event.heure.toString()+"#"
+            questionName+=event.heure.toString()
             firstTime=false
         }
         else
         {
-
-         */
             if(questionName.last()=='#')
                 questionName+=event.heure.toString()
             else
                 questionName+="#"+event.heure.toString()
-        //}
+        }
         questionName.replace("\\u00E9","é")
         var quizParam = QuizParam()
         quizParam.name = questionName

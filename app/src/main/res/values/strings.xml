@@ -61,6 +61,8 @@
     <string name="menu_description">Select your theme</string>
     <string name="news">News</string>
     <string name="quiz">Quiz</string>
+    <string name="nbrOffres">Nombre des offres</string>
+    <string name="spinoffOffres">Echantillon des offres</string>
     <string name="jobstats">Job stats</string>
     <string name="guide">Guide</string>
     <string name="historique">Historique</string>
@@ -68,7 +70,10 @@
     <string name="leaves">Leaves</string>
     <string name="guideorientation">Guide d\'orientation</string>
     <string name="result">Résultat</string>
+    <string name="history">Historique</string>
+    <string name="stats">Stats</string>
     <string name="formresult">Le résultat de votre quiz</string>
+    <string name="keyword">Mot clé :</string>
     <string name="salary_advance">Salary Advance</string>
     <string name="profile">"My profile</string>
     <string name="cra">CRA</string>
