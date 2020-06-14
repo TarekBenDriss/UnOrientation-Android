@@ -31,6 +31,7 @@ public class BindingAdapterUtils {
 
     @BindingAdapter("changeText")
     public static void setImageUrl(TextView view, String txt) {
+        txt = txt.toLowerCase();
         switch (txt) {
             case "pleinair":
                 view.setText("Plein air");

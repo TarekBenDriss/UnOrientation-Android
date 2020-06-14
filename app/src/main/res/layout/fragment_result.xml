@@ -63,11 +63,11 @@
             <androidx.cardview.widget.CardView
                 app:layout_constraintTop_toBottomOf="@id/topLayout"
                 android:id="@+id/cv1"
-                android:layout_marginStart="48px"
-                android:layout_marginEnd="48px"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="36dp"
+                android:layout_marginBottom="32dp"
                 android:backgroundTint="@color/white"
                 android:clipChildren="false"
                 android:clipToPadding="false"
@@ -76,7 +76,7 @@
                 android:elevation="40dp"
                 android:outlineAmbientShadowColor="@color/black"
                 android:outlineSpotShadowColor="@color/black"
-                app:layout_constraintDimensionRatio="1:1.2"
+
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintHorizontal_chainStyle="packed"
@@ -106,6 +106,7 @@
                         app:layout_constraintTop_toTopOf="parent" />
 
 
+
                     <TextView
                         android:id="@+id/keywordTitle"
                         android:layout_width="wrap_content"
@@ -115,7 +116,7 @@
                         android:layout_marginEnd="8dp"
                         android:animateLayoutChanges="true"
                         android:fontFamily="@font/comfortaabold"
-                        android:text="@string/keyword"
+                        android:text="Orientation :"
                         android:textAlignment="textStart"
                         android:textColor="@color/black"
                         android:textSize="18sp"

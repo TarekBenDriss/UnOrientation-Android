@@ -107,15 +107,16 @@ class ResultFragment : Fragment() {
                         Handler().postDelayed({
                             Logger.e("Get Quiz Response", response.toString())
                             resultTxt?.text = response.question
+                            //resultTxt?.text = response.id
                             mBinding?.code?.text = response.name
 
                             Glide.with(context!!).applyDefaultRequestOptions(RequestOptions().disallowHardwareConfig())
-                                    .load("http://5.135.52.75/104.png")
+                                    .load("http://5.135.52.75/img/"+response.name+".png")
                                     .apply(RequestOptions.circleCropTransform())
                                     //.placeholder(R.drawable.empty)
                                     .into(mBinding?.resultImg!!)
 
-                            editor?.putString("Keyword",response.question)
+                            editor?.putString("Keyword",response.id)
                             editor?.apply()
 
                         } , 500)
