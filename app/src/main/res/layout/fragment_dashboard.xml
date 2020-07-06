@@ -596,7 +596,7 @@
                         app:layout_constraintStart_toStartOf="@id/img5"
                         app:layout_constraintTop_toTopOf="@id/img5"
                         app:layout_constraintWidth_percent="0.3"
-                        app:srcCompat="@drawable/ic_salary0" />
+                        app:srcCompat="@drawable/ic_profil0" />
 
                     <TextView
                         android:id="@+id/tv5"
@@ -619,7 +619,7 @@
 
 
             <androidx.cardview.widget.CardView
-                android:visibility="invisible"
+                android:visibility="visible"
                 android:id="@+id/cv6"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
@@ -631,7 +631,7 @@
                 android:divider="@android:color/transparent"
                 android:dividerHeight="0.0px"
                 android:elevation="10dp"
-                app:layout_constraintDimensionRatio="1:0.74"
+                app:layout_constraintDimensionRatio="1:0.89"
                 app:layout_constraintEnd_toStartOf="@id/l3"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toEndOf="@+id/l2"
@@ -673,7 +673,10 @@
                         app:layout_constraintStart_toStartOf="@id/img6"
                         app:layout_constraintTop_toTopOf="@id/img6"
                         app:layout_constraintBottom_toBottomOf="@id/img6"
-                        app:srcCompat="@drawable/ic_profil0"
+                        android:layout_margin="4dp"
+                        android:tint="@color/orange_edit_text"
+                        app:srcCompat="@drawable/ic_salary0"
+
                         app:layout_constraintWidth_percent="0.3"/>
 
                     <TextView
@@ -681,7 +684,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/comfortaaregular"
-                        android:text="@string/profile"
+                        android:text="Score"
                         android:textColor="@color/hometxt"
                         android:textSize="14sp"
                         app:layout_constraintBottom_toBottomOf="parent"

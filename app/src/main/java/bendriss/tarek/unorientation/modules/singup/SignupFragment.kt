@@ -20,20 +20,23 @@ import bendriss.tarek.unorientation.data.source.local.entity.UserProfile
 import bendriss.tarek.unorientation.data.source.remote.response.SignupResponse
 import bendriss.tarek.unorientation.databinding.FragmentSignupBinding
 import bendriss.tarek.unorientation.modules.dashboard.DashboardActivity
+import bendriss.tarek.unorientation.modules.jobstats.CustomInfoDialog
 import bendriss.tarek.unorientation.modules.login.LoginViewModel
 import bendriss.tarek.unorientation.util.AlertDialogUtils
 import bendriss.tarek.unorientation.util.Constants
 import bendriss.tarek.unorientation.util.Logger
 import bendriss.tarek.unorientation.util.StringUtils
+import com.fasterxml.jackson.databind.ObjectMapper
 import com.google.android.material.snackbar.Snackbar
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.disposables.Disposable
 import io.reactivex.observers.DisposableSingleObserver
 import io.reactivex.schedulers.Schedulers
+import java.io.IOException
 
 
-class SignupFragment : BaseFragment() {
+class SignupFragment : BaseFragment() , ActionsDelegate{
 
 
     private var mDisposable: CompositeDisposable? = null
@@ -41,9 +44,10 @@ class SignupFragment : BaseFragment() {
     private var username: EditText? = null
     private  var password: EditText? = null
     private  var nom: EditText? = null
-    private  var bac: EditText? = null
+    private  var bac: Button? = null
     private  var loginTxt: TextView? = null
     private  var moyenne: EditText? = null
+    private  var rang: EditText? = null
     private var mBinding: FragmentSignupBinding? = null
     private var mSignInViewModel: LoginViewModel? = null
 
@@ -77,6 +81,7 @@ class SignupFragment : BaseFragment() {
         bac = mBinding?.bacEt
         loginTxt = mBinding?.loginTxt
         moyenne = mBinding?.bacMoyEt
+        rang = mBinding?.rankEt
 
         mBinding?.logo?.setOnClickListener{
             val intent = Intent(mActivity, DashboardActivity::class.java)
@@ -85,10 +90,15 @@ class SignupFragment : BaseFragment() {
             mActivity.finish()
         }
 
+        bac?.setOnClickListener {
+            val alert = CustomBacDialog(activity,this)
+            alert.showDialog(activity,this,"wrld")
+        }
+
         signupBtn?.setOnClickListener {
             if (isValid()) {
-                if(StringUtils.isLength(username?.text.toString(),3)) {
-                    if(StringUtils.isLength(password?.text.toString(),4)) {
+                if(StringUtils.isLengthOrGreater(username?.text.toString(),3)) {
+                    if(StringUtils.isLengthOrGreater(password?.text.toString(),4)) {
                         if (isMoyValid()) {
                             val userProfile = UserProfile()
                             userProfile.username = username?.text.toString()
@@ -96,6 +106,7 @@ class SignupFragment : BaseFragment() {
                             userProfile.nom = nom?.text.toString()
                             userProfile.bac = bac?.text.toString()
                             userProfile.moyBac = moyenne?.text.toString().toFloat()
+                            userProfile.rang = rang?.text.toString().toInt()
                             App.getDataComponent().inject(this)
                             doSignup(userProfile)
                         } else
@@ -119,6 +130,7 @@ class SignupFragment : BaseFragment() {
                 && StringUtils.isNotEmpty(nom!!.text.toString())
                 && StringUtils.isNotEmpty(bac!!.text.toString())
                 && StringUtils.isNotEmpty(moyenne!!.text.toString())
+                && StringUtils.isNotEmpty(rang!!.text.toString())
                 )
     }
 
@@ -142,6 +154,9 @@ class SignupFragment : BaseFragment() {
         }
         if (!StringUtils.isNotEmpty(moyenne!!.text.toString())) {
             onlyShake(context,moyenne as View)
+        }
+        if (!StringUtils.isNotEmpty(rang!!.text.toString())) {
+            onlyShake(context,rang as View)
         }
 
         onlySnack(mContext,mBinding?.mainLayout as View,mContext.resources.getString(R.string.required_fields))
@@ -204,6 +219,15 @@ class SignupFragment : BaseFragment() {
                     override fun onSuccess(response: SignupResponse) {
                         Logger.e("SignupResponse", response.toString())
 
+                        val mapper = ObjectMapper()
+                        try {
+                            // Java objects to JSON string - compact-print
+                            val jsonString = mapper.writeValueAsString(response.user)
+                            editor!!.putString("UserObject", jsonString)
+                        } catch (e: IOException) {
+                            e.printStackTrace()
+                        }
+                        editor!!.putInt(Constants.USER_ID, response.user.id)
                         editor!!.putBoolean(Constants.IS_LOGGED_IN, true)
                         editor!!.apply()
 
@@ -219,6 +243,10 @@ class SignupFragment : BaseFragment() {
                         AlertDialogUtils.showString(mActivity, R.string.error_incorrect_password, getString(R.string.error_incorrect_password_msg), null)
                     }
                 })?.let { mDisposable?.add(it) }
+    }
+
+    override fun choisirBac(bacString: String?) {
+        this.bac?.setText(bacString)
     }
 
 

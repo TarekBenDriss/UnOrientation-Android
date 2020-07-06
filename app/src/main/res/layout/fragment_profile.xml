@@ -22,7 +22,7 @@
             android:src="@drawable/fondappli3"
             android:visibility="visible"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHeight_percent="0.45"
+            app:layout_constraintHeight_percent="0.35"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -71,13 +71,12 @@
             android:orientation="horizontal"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHeight_percent="0.28"
+            app:layout_constraintHeight_percent="0.38"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/drop"
-            app:layout_constraintWidth_percent="0.8">
+            app:layout_constraintWidth_percent="0.8"/>
 
 
-        </LinearLayout>
 
         <LinearLayout
             android:id="@+id/layout_blue"
@@ -117,14 +116,14 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
             android:fontFamily="@font/comfortaalight"
-            android:text=""
+            android:text="Etudiant"
             android:textAllCaps="false"
             android:textColor="@color/white"
             android:textSize="15sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/position"
-            tools:text="Audi Australia" />
+            tools:text="Etudiant" />
 
         <TextView
             android:id="@+id/cityTV"
@@ -143,104 +142,115 @@
             app:layout_constraintTop_toBottomOf="@+id/posteTV"
             tools:text="Sydney, Australia" />
 
-        <ImageView
-            android:id="@+id/mailImage"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_marginBottom="32dp"
-            android:src="@drawable/ic_message"
-            app:layout_constraintBottom_toBottomOf="@+id/layout_white_1"
-            app:layout_constraintDimensionRatio="1:1"
-            app:layout_constraintEnd_toStartOf="@+id/phoneImage"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintHorizontal_chainStyle="packed"
-            app:layout_constraintStart_toEndOf="@id/lieuImage"
-            app:layout_constraintTop_toBottomOf="@+id/resumeBtn"
-            app:layout_constraintWidth_percent="0.11" />
-
-        <ImageView
-            android:id="@+id/lieuImage"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_marginEnd="60dp"
-            android:layout_marginBottom="32dp"
-            android:src="@drawable/ic_lieu"
-            android:visibility="invisible"
-            app:layout_constraintBottom_toBottomOf="@+id/layout_white_1"
-            app:layout_constraintDimensionRatio="1:1"
-            app:layout_constraintEnd_toStartOf="@+id/mailImage"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintHorizontal_chainStyle="packed"
-            app:layout_constraintStart_toStartOf="@+id/layout_white_1"
-            app:layout_constraintTop_toBottomOf="@+id/resumeBtn"
-            app:layout_constraintWidth_percent="0.11" />
-
         <TextView
-            android:id="@+id/mailText"
+            app:layout_constraintTop_toBottomOf="@id/resumeBtn"
+            android:id="@+id/bac"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
             android:layout_marginBottom="32dp"
             android:fontFamily="@font/comfortaaregular"
-            android:text="Message"
-            android:textColor="@color/black"
-            app:layout_constraintBottom_toBottomOf="@+id/layout_white_1"
+            android:text="Bac :"
+            android:textStyle="bold"
+
+            android:layout_marginTop="24dp"
+            app:layout_constraintStart_toStartOf="@id/layout_white_1"
+            android:layout_marginStart="16dp"
+            android:textColor="@color/orange_edit_text"
             app:layout_constraintDimensionRatio=""
-            app:layout_constraintEnd_toEndOf="@+id/mailImage"
-            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintHorizontal_chainStyle="packed"
-            app:layout_constraintStart_toStartOf="@+id/mailImage"
-            app:layout_constraintTop_toBottomOf="@+id/mailImage"
-            app:layout_constraintWidth_percent="0.11" />
+            app:layout_constraintWidth_percent="0.11"
+            tools:layout_editor_absoluteX="175dp" />
+
 
         <TextView
-            android:id="@+id/lieuText"
+            app:layout_constraintTop_toBottomOf="@id/resumeBtn"
+            android:id="@+id/bacV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="32dp"
+            android:fontFamily="@font/comfortaaregular"
+            android:text="Economie"
+
+            android:layout_marginTop="24dp"
+            app:layout_constraintStart_toStartOf="@id/moyenneV"
+            android:textColor="@color/black"
+            app:layout_constraintDimensionRatio=""
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintWidth_percent="0.11"
+            tools:layout_editor_absoluteX="175dp" />
+
+
+        <TextView
+            app:layout_constraintBottom_toBottomOf="@id/rang"
+            app:layout_constraintTop_toTopOf="@id/rang"
+            android:id="@+id/rangV"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/comfortaaregular"
-            android:text="Localisation"
+            android:text="2736"
+
+            app:layout_constraintStart_toStartOf="@id/moyenneV"
             android:textColor="@color/black"
-            android:visibility="invisible"
-            app:layout_constraintBottom_toBottomOf="@+id/mailText"
-            app:layout_constraintEnd_toEndOf="@+id/lieuImage"
-            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintDimensionRatio=""
             app:layout_constraintHorizontal_chainStyle="packed"
-            app:layout_constraintStart_toStartOf="@+id/lieuImage"
-            app:layout_constraintTop_toTopOf="@+id/mailText"
-            app:layout_constraintWidth_percent="0.11" />
+            app:layout_constraintWidth_percent="0.11"
+            tools:layout_editor_absoluteX="175dp" />
+
 
         <TextView
-            android:id="@+id/phoneText"
+            app:layout_constraintTop_toTopOf="@id/moyenne"
+            app:layout_constraintBottom_toBottomOf="@id/moyenne"
+            android:id="@+id/moyenneV"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/comfortaaregular"
-            android:text="Numéro"
+            android:text="15.67"
+            android:maxLength="5"
+            app:layout_constraintStart_toEndOf="@id/moyenne"
+            android:layout_marginStart="16dp"
             android:textColor="@color/black"
-            android:visibility="invisible"
-            app:layout_constraintBottom_toBottomOf="@+id/mailText"
-            app:layout_constraintDimensionRatio="1:1"
-            app:layout_constraintEnd_toEndOf="@+id/phoneImage"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="@+id/phoneImage"
-            app:layout_constraintTop_toTopOf="@+id/mailText"
-            app:layout_constraintWidth_percent="0.11" />
+            app:layout_constraintDimensionRatio=""
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintWidth_percent="0.11"
+            tools:layout_editor_absoluteX="175dp" />
 
-        <ImageView
-            android:id="@+id/phoneImage"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_marginStart="60dp"
+
+        <TextView
+            app:layout_constraintTop_toBottomOf="@id/bac"
+            android:id="@+id/rang"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="32dp"
             android:fontFamily="@font/comfortaaregular"
-            android:src="@drawable/ic_numero"
-            android:textColor="@color/black"
-            android:visibility="invisible"
-            app:layout_constraintBottom_toBottomOf="@+id/mailImage"
-            app:layout_constraintDimensionRatio="1:1"
-            app:layout_constraintEnd_toEndOf="@+id/layout_white_1"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/mailImage"
-            app:layout_constraintTop_toTopOf="@+id/mailImage"
-            app:layout_constraintWidth_percent="0.11" />
+            android:text="Rang :"
+            android:textStyle="bold"
+            android:layout_marginTop="24dp"
+            app:layout_constraintStart_toStartOf="@id/layout_white_1"
+            android:layout_marginStart="16dp"
+            android:textColor="@color/orange_edit_text"
+            app:layout_constraintDimensionRatio=""
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintWidth_percent="0.11"
+            tools:layout_editor_absoluteX="175dp" />
+
+
+        <TextView
+            app:layout_constraintTop_toBottomOf="@id/rang"
+            android:id="@+id/moyenne"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="32dp"
+            android:fontFamily="@font/comfortaaregular"
+            android:text="Moyenne :"
+            android:textStyle="bold"
+            android:layout_marginTop="24dp"
+            app:layout_constraintStart_toStartOf="@id/layout_white_1"
+            android:layout_marginStart="16dp"
+            android:textColor="@color/orange_edit_text"
+            app:layout_constraintDimensionRatio=""
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintWidth_percent="0.11"
+            tools:layout_editor_absoluteX="175dp" />
 
         <ImageView
             android:id="@+id/resumeBtn"
@@ -295,11 +305,11 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
             android:fontFamily="@font/roboto_regular"
-            android:text=""
+            android:text="Etudiant"
             tools:text="Audi Australia"
             android:textColor="@color/default_txt_color"
             android:textSize="16sp"
-            android:visibility="invisible"
+            android:visibility="gone"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/position" />

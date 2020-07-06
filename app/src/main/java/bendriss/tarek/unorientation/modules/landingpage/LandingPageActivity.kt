@@ -11,10 +11,11 @@ import bendriss.tarek.unorientation.base.BaseActivity
 import bendriss.tarek.unorientation.modules.dashboard.DashboardFragment
 import bendriss.tarek.unorientation.modules.login.LoginFragment
 import bendriss.tarek.unorientation.modules.quiz.QuizFragment
+import bendriss.tarek.unorientation.modules.singup.ActionsDelegate
 import bendriss.tarek.unorientation.modules.singup.SignupFragment
 import bendriss.tarek.unorientation.util.ActivityUtils
 
-class LandingPageActivity : BaseActivity() ,FragmentDelegate{
+class LandingPageActivity : BaseActivity() ,FragmentDelegate,ActionsDelegate{
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,6 +40,9 @@ class LandingPageActivity : BaseActivity() ,FragmentDelegate{
         transaction.replace(R.id.fragmentLanding, fragment)
         transaction.addToBackStack(null)
         transaction.commit()
+    }
+
+    override fun choisirBac(bac: String?) {
     }
 }
 

@@ -1,0 +1,366 @@
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    >
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/mainLayout"
+        android:animateLayoutChanges="true"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/grispokmy">
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/topLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top"
+                android:background="@drawable/header_pages"
+                android:textColor="@color/white"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:textAppearance="@style/PagerTabStripText"
+                android:paddingTop="24dp"
+                android:paddingBottom="24dp" >
+
+                <TextView
+                    android:id="@+id/title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="19sp"
+                    android:fontFamily="@font/comfortaabold"
+                    android:text="Score"
+                    android:layout_margin="16dp"
+                    android:textColor="@color/white"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:layout_constraintTop_toBottomOf="@id/topLayout"
+    >
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/topLayout"
+                android:layout_marginTop="24dp"
+                >
+                <Button
+                android:id="@+id/bacEt"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/edit_text_height"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="8dp"
+                android:drawableStart="@drawable/ic_bac_wrapped"
+                android:drawablePadding="22dp"
+                android:background="@drawable/edit_text_underlined"
+                android:ems="10"
+                android:drawableEnd="@drawable/ic_down_arrow_wrapped"
+                android:textAlignment="viewStart"
+                android:textAllCaps="false"
+                android:fontFamily="@font/comfortaalight"
+                android:hint="@string/bac"
+                android:textIsSelectable="false"
+                android:editable="false"
+                android:inputType="none"
+                android:paddingStart="28dp"
+                android:paddingEnd="15dp"
+                android:textColor="@color/orange_edit_text_v2"
+                android:textColorHint="@color/orange_edit_text_v2"
+                android:textCursorDrawable="@null"
+                android:drawableTint="@color/orange_edit_text_v2"
+                android:textSize="@dimen/edit_text_text_size"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHeight_percent="0.17"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintWidth_percent="0.78"
+                android:drawableRight="@drawable/ic_bac"
+                />
+
+
+            <EditText
+
+                android:visibility="gone"
+                android:transitionName="loginTransition"
+
+                android:id="@+id/moyG"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/edit_text_height"
+
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:background="@drawable/edit_text_underlined"
+                android:drawablePadding="23dp"
+                android:ems="10"
+                android:fontFamily="@font/comfortaalight"
+                android:hint="Moyenne génerale"
+                android:inputType="numberDecimal"
+                android:paddingEnd="15dp"
+                android:paddingStart="24dp"
+                android:textColor="@color/orange_edit_text_v2"
+                android:textColorHint="@color/orange_edit_text_v2"
+                android:drawableTint="@color/orange_edit_text_v2"
+                android:layout_marginTop="8dp"
+                android:textCursorDrawable="@null"
+                android:textSize="@dimen/edit_text_text_size"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHeight_percent="0.17"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/bacEt"
+                app:layout_constraintWidth_percent="0.78" />
+
+            <EditText
+
+                android:visibility="gone"
+                android:transitionName="loginTransition"
+
+                android:id="@+id/loginEt"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/edit_text_height"
+
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:background="@drawable/edit_text_underlined"
+                android:drawablePadding="23dp"
+                android:ems="10"
+                android:fontFamily="@font/comfortaalight"
+                android:hint="@string/login_word"
+                android:inputType="numberDecimal"
+                android:paddingEnd="15dp"
+                android:paddingStart="24dp"
+                android:textColor="@color/orange_edit_text_v2"
+                android:textColorHint="@color/orange_edit_text_v2"
+                android:drawableTint="@color/orange_edit_text_v2"
+                android:layout_marginTop="8dp"
+                android:textCursorDrawable="@null"
+                android:textSize="@dimen/edit_text_text_size"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHeight_percent="0.17"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/moyG"
+                app:layout_constraintWidth_percent="0.78" />
+
+
+            <EditText
+                android:id="@+id/passwordEt"
+
+                android:transitionName="passwordTransition"
+                android:visibility="gone"
+
+                android:layout_width="0dp"
+                android:layout_height="@dimen/edit_text_height"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:drawablePadding="22dp"
+                android:background="@drawable/edit_text_underlined"
+                android:ems="10"
+                android:fontFamily="@font/comfortaalight"
+                android:hint="@string/password"
+                android:inputType="numberDecimal"
+                android:paddingStart="24dp"
+                android:paddingEnd="15dp"
+                android:textColor="@color/orange_edit_text_v2"
+                android:textColorHint="@color/orange_edit_text_v2"
+                android:textCursorDrawable="@null"
+                android:drawableTint="@color/orange_edit_text_v2"
+                android:textSize="@dimen/edit_text_text_size"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHeight_percent="0.17"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/loginEt"
+                app:layout_constraintWidth_percent="0.78" />
+
+            <EditText
+                android:id="@+id/nomEt"
+                android:visibility="gone"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/edit_text_height"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:drawablePadding="25dp"
+                android:background="@drawable/edit_text_underlined"
+                android:ems="10"
+                android:fontFamily="@font/comfortaalight"
+                android:hint="@string/fullname"
+                android:inputType="numberDecimal"
+                android:paddingStart="24dp"
+                android:paddingEnd="15dp"
+                android:textColor="@color/orange_edit_text_v2"
+                android:textColorHint="@color/orange_edit_text_v2"
+                android:textCursorDrawable="@null"
+                android:drawableTint="@color/orange_edit_text_v2"
+                android:textSize="@dimen/edit_text_text_size"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHeight_percent="0.17"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/passwordEt"
+                app:layout_constraintWidth_percent="0.78" />
+
+
+
+            <EditText
+                android:visibility="gone"
+                android:id="@+id/bacMoyEt"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/edit_text_height"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/edit_text_underlined"
+                android:drawablePadding="25dp"
+                android:drawableTint="@color/orange_edit_text_v2"
+                android:ems="10"
+                android:fontFamily="@font/comfortaalight"
+                android:hint="@string/moyennebac"
+                android:inputType="numberDecimal"
+                android:paddingStart="24dp"
+                android:paddingEnd="15dp"
+                android:textColor="@color/orange_edit_text_v2"
+                android:textColorHint="@color/orange_edit_text_v2"
+                android:textCursorDrawable="@null"
+                android:textSize="@dimen/edit_text_text_size"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHeight_percent="0.17"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/nomEt"
+                app:layout_constraintWidth_percent="0.78" />
+
+            <EditText
+                android:id="@+id/rankEt"
+                android:visibility="gone"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/edit_text_height"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/edit_text_underlined"
+                android:drawablePadding="20dp"
+                android:ems="10"
+                android:fontFamily="@font/comfortaalight"
+                android:hint="Rang"
+                android:inputType="numberDecimal"
+                android:paddingStart="24dp"
+                android:paddingEnd="15dp"
+                android:textColor="@color/orange_edit_text_v2"
+                android:textColorHint="@color/orange_edit_text_v2"
+                android:textCursorDrawable="@null"
+                android:textSize="@dimen/edit_text_text_size"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHeight_percent="0.17"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/bacMoyEt"
+                app:layout_constraintWidth_percent="0.78" />
+
+            <EditText
+                android:visibility="gone"
+                android:id="@+id/rankEt2"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/edit_text_height"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/edit_text_underlined"
+                android:drawablePadding="20dp"
+                android:drawableTint="@color/orange_edit_text_v2"
+                android:ems="10"
+                android:fontFamily="@font/comfortaalight"
+                android:hint="Rang"
+                android:inputType="numberDecimal"
+                android:paddingStart="24dp"
+                android:paddingEnd="15dp"
+                android:textColor="@color/orange_edit_text_v2"
+                android:textColorHint="@color/orange_edit_text_v2"
+                android:textCursorDrawable="@null"
+                android:textSize="@dimen/edit_text_text_size"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHeight_percent="0.17"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/rankEt"
+                app:layout_constraintWidth_percent="0.78" />
+
+
+            <EditText
+                android:visibility="gone"
+                android:id="@+id/rankEt3"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/edit_text_height"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/edit_text_underlined"
+                android:drawablePadding="20dp"
+                android:ems="10"
+                android:fontFamily="@font/comfortaalight"
+                android:hint="Rang"
+                android:inputType="numberDecimal"
+                android:paddingStart="24dp"
+                android:paddingEnd="15dp"
+                android:textColor="@color/orange_edit_text_v2"
+                android:textColorHint="@color/orange_edit_text_v2"
+                android:textCursorDrawable="@null"
+                android:textSize="@dimen/edit_text_text_size"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHeight_percent="0.17"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/rankEt2"
+                app:layout_constraintWidth_percent="0.78" />
+
+
+
+
+
+            <Button
+                android:id="@+id/calculBtn"
+                android:visibility="gone"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/edit_text_height"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="48dp"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/login_btn"
+                android:backgroundTint="@color/login_btn"
+                android:fontFamily="@font/comfortaabold"
+                android:text="Calculer le score"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="@dimen/button_text"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginBottom="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHeight_percent="0.17"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/rankEt3"
+                app:layout_constraintWidth_percent="0.78"
+                android:transitionName="btnTransition"
+                />
+
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -51,6 +51,7 @@
     <color name="incoming_msg_color_medecin">#14e73d3e</color>
     <color name="date_color">#9fa4ad</color>
     <color name="orange_edit_text">#e02e3d</color>
+    <color name="orange_edit_text_v2">#6DE02E3D</color>
     <color name="gris_fonce">#53576e</color>
     <color name="gris_edit_text">#43566A</color>
     <color name="gris_shadow">#5c848c94</color>
@@ -78,6 +79,7 @@
     <color name="patient_menu_icon_tint">#2235aa</color>
     <color name="white_transparent">#01ffffff</color>
     <color name="white_blacked">#85ffffff</color>
+    <color name="white_blacked_v2">#4AFFFFFF</color>
     <color name="btn_txt">#335996</color>
 
     <color name="prise">#13c100</color>

@@ -5,6 +5,7 @@ import android.graphics.Typeface
 import android.os.Build
 import android.os.Bundle
 import android.preference.PreferenceManager
+import android.util.Log
 import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
@@ -18,6 +19,7 @@ import android.widget.TextView
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import bendriss.tarek.unorientation.R
+import bendriss.tarek.unorientation.data.source.local.entity.UserProfile
 import bendriss.tarek.unorientation.data.source.remote.response.HistoriqueResponse
 import bendriss.tarek.unorientation.databinding.FragmentDashboardBinding
 import bendriss.tarek.unorientation.modules.guidpdf.PdfReadderFragment
@@ -26,10 +28,14 @@ import bendriss.tarek.unorientation.modules.jobstats.JobStatsFragment
 import bendriss.tarek.unorientation.modules.login.LoginFragment
 import bendriss.tarek.unorientation.modules.profile.ProfileFragment
 import bendriss.tarek.unorientation.modules.quiz.QuizFragment
+import bendriss.tarek.unorientation.modules.quiz.ResultFragment
+import bendriss.tarek.unorientation.modules.score.ScoreFragment
 import bendriss.tarek.unorientation.util.ItemClickEvent
 import bendriss.tarek.unorientation.util.Logger
+import com.fasterxml.jackson.databind.ObjectMapper
 import com.google.android.material.snackbar.Snackbar
 import org.greenrobot.eventbus.EventBus
+import java.io.IOException
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -62,6 +68,12 @@ class DashboardFragment : Fragment() {
         mBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_dashboard, container, false)
 
         initDatabinding()
+
+        val sharedpreferences = PreferenceManager.getDefaultSharedPreferences(context)
+        var editor: SharedPreferences.Editor? = sharedpreferences?.edit()
+            editor!!.putString("quizName", "")
+            editor!!.apply()
+
         //EventBus.getDefault().register(this)
 
         return mBinding?.root
@@ -125,7 +137,35 @@ class DashboardFragment : Fragment() {
             // my profile
             fragmentManager?.beginTransaction()?.replace(R.id.fragment, ProfileFragment())?.addToBackStack(null)?.commit()
         }
+
+        mBinding?.cv6?.setOnClickListener{
+            // my profile
+            fragmentManager?.beginTransaction()?.replace(R.id.fragment, ScoreFragment())?.addToBackStack(null)?.commit()
+        }
+
+
+
+        val mapper = ObjectMapper()
+        var jsonUser:String = preferences?.getString("UserObject","")!!
+        Log.e("USEROBJECT",jsonUser)
+        try {
+            // JSON string to Java object
+            val user: UserProfile = mapper.readValue(jsonUser, UserProfile::class.java)
+            //Log.e("USEROBJECT","xxxxx"+user.toString())
+            mBinding?.menuTxt?.text = user.username
+
+
+        } catch (e: IOException) {
+            e.printStackTrace()
+        }
     }
 
+    override fun onResume() {
+        super.onResume()
+        val sharedpreferences = PreferenceManager.getDefaultSharedPreferences(context)
+        var editor: SharedPreferences.Editor? = sharedpreferences?.edit()
+        editor!!.putString("quizName", "")
+        editor!!.apply()
+    }
 
 }

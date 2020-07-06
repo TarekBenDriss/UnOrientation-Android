@@ -133,6 +133,7 @@
                         android:animateLayoutChanges="true"
                         android:fontFamily="@font/comfortaabold"
                         android:text=""
+                        tools:text="Licence fondamentale en kdsfjkez hhrez kkjze rhjze "
                         android:textAlignment="textStart"
                         android:textColor="@color/grispokmysplash"
                         android:textSize="18sp"
@@ -165,12 +166,81 @@
                         android:animateLayoutChanges="true"
                         android:fontFamily="@font/comfortaabold"
                         android:text=""
+                        tools:text="769"
                         android:textAlignment="textStart"
                         android:textColor="@color/grispokmysplash"
                         android:textSize="18sp"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="@id/resultTxt"
+                        app:layout_constraintStart_toStartOf="@id/rang"
                         app:layout_constraintTop_toTopOf="@id/codeTitle" />
+
+                    <TextView
+                        android:id="@+id/rangTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="24dp"
+                        android:layout_marginEnd="8dp"
+                        android:animateLayoutChanges="true"
+                        android:fontFamily="@font/comfortaabold"
+                        android:text="Rang du dernier orienté :"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/black"
+                        android:textSize="18sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/codeTitle" />
+
+                    <TextView
+                        android:id="@+id/rang"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="8dp"
+                        android:animateLayoutChanges="true"
+                        android:fontFamily="@font/comfortaabold"
+                        android:text=""
+                        tools:text="8372"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/grispokmysplash"
+                        android:textSize="18sp"
+                        android:layout_marginStart="8dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/rangTitle"
+                        app:layout_constraintTop_toTopOf="@id/rangTitle" />
+
+
+                    <TextView
+                        android:id="@+id/votreRangTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="24dp"
+                        android:layout_marginEnd="8dp"
+                        android:animateLayoutChanges="true"
+                        android:fontFamily="@font/comfortaabold"
+                        android:text="Votre rang :"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/black"
+                        android:textSize="18sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/rangTitle" />
+
+                    <TextView
+                        android:id="@+id/votreRang"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="8dp"
+                        android:animateLayoutChanges="true"
+                        android:fontFamily="@font/comfortaabold"
+                        android:text=""
+                        tools:text="12372"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/grispokmysplash"
+                        android:textSize="18sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="@id/rang"
+                        app:layout_constraintTop_toTopOf="@id/votreRangTitle" />
+
+
 
 
                     <androidx.cardview.widget.CardView
@@ -181,7 +251,7 @@
                         app:layout_constraintDimensionRatio="1:1"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/code"
+                        app:layout_constraintTop_toBottomOf="@id/votreRang"
                         app:layout_constraintWidth_percent="0.5">
 
                         <ImageView

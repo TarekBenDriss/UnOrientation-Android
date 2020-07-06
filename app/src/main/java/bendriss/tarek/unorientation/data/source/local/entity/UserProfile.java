@@ -53,6 +53,16 @@ public class UserProfile {
     private float moyBac;
     @JsonProperty("password")
     private String password;
+    @JsonProperty("rang")
+    private int rang;
+
+    public int getRang() {
+        return rang;
+    }
+
+    public void setRang(int rang) {
+        this.rang = rang;
+    }
 
     public String getAdresse() {
         return adresse;

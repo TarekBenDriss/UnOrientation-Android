@@ -6,7 +6,7 @@ import android.os.Build
 import android.os.Bundle
 import android.os.Handler
 import android.preference.PreferenceManager
-import android.view.Gravity
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -23,6 +23,7 @@ import androidx.recyclerview.widget.RecyclerView
 import bendriss.tarek.unorientation.App
 import bendriss.tarek.unorientation.R
 import bendriss.tarek.unorientation.base.BaseFragment
+import bendriss.tarek.unorientation.data.source.local.entity.UserProfile
 import bendriss.tarek.unorientation.data.source.remote.params.QuizParam
 import bendriss.tarek.unorientation.data.source.remote.response.QuizResponse
 import bendriss.tarek.unorientation.databinding.FragmentQuizBinding
@@ -31,8 +32,7 @@ import bendriss.tarek.unorientation.util.AlertDialogUtils
 import bendriss.tarek.unorientation.util.Constants
 import bendriss.tarek.unorientation.util.ItemClickEvent
 import bendriss.tarek.unorientation.util.Logger
-import com.transitionseverywhere.Slide
-import com.transitionseverywhere.TransitionManager
+import com.fasterxml.jackson.databind.ObjectMapper
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.observers.DisposableSingleObserver
@@ -40,9 +40,14 @@ import io.reactivex.schedulers.Schedulers
 import jp.wasabeef.recyclerview.animators.SlideInUpAnimator
 import org.greenrobot.eventbus.EventBus
 import org.greenrobot.eventbus.Subscribe
+import java.io.IOException
 
 
 class QuizFragment : BaseFragment(), Animation.AnimationListener{
+
+
+    private var preferences: SharedPreferences? = null
+    private var editor: SharedPreferences.Editor? = null
 
     private var mDisposable: CompositeDisposable? = null
     private var mQuizViewModel: QuizViewModel? = null
@@ -84,12 +89,71 @@ class QuizFragment : BaseFragment(), Animation.AnimationListener{
 
         EventBus.getDefault().register(this)
 
+
         var quizParam:QuizParam = QuizParam()
-        questionName = ""
-        quizParam.name = ""
-        quizParam.finalQuiz = "false"
-        //getQuiz("0")
-        getQuiz(quizParam)
+        if(preferences?.getString("firstTime","false")=="true") {
+
+            val mapper = ObjectMapper()
+            var user: UserProfile = UserProfile()
+            var jsonUser:String = preferences?.getString("UserObject","")!!
+            Log.e("USEROBJECT",jsonUser)
+            try {
+                user = mapper.readValue(jsonUser, UserProfile::class.java)
+                //mBinding?.nameTV?.text = user.username
+                if(user.bac == "Informatique")
+                {
+                    questionName = "info"
+                    quizParam.name = "info"
+                }
+                else if(user.bac == "Economie")
+                {questionName = "eco"
+                    quizParam.name = "eco"
+                }
+                else if(user.bac == "Sciences")
+                {questionName = "sc"
+                    quizParam.name = "sc"
+                }
+                else if(user.bac == "Maths")
+                {questionName = "math"
+                    quizParam.name = "math"
+                }
+                else if(user.bac == "Lettres")
+                {questionName = "lettre"
+                    quizParam.name = "lettre"
+                }
+                else if(user.bac == "Sport")
+                {questionName = "sport"
+                    quizParam.name = "sport"
+                }
+                else if(user.bac == "Techniques")
+                {questionName = "tech"
+                    quizParam.name = "tech"
+                }
+
+                editor!!.putString("firstTime","false")
+                editor!!.apply()
+
+                quizParam.finalQuiz = "false"
+                firstTime=false
+
+                //getQuiz("0")
+                getQuiz(quizParam)
+
+
+            } catch (e: IOException) {
+                e.printStackTrace()
+            }
+
+
+        }
+        else
+        {
+            questionName = ""
+            quizParam.name = ""
+            quizParam.finalQuiz = "false"
+            //getQuiz("0")
+            getQuiz(quizParam)
+        }
         return mBinding?.root
 
         //return view
@@ -98,6 +162,8 @@ class QuizFragment : BaseFragment(), Animation.AnimationListener{
 
     private fun initDataBinding() {
        // mBinding = DataBindingUtil.setContentView(mActivity, R.layout.fragment_quiz)
+        preferences = PreferenceManager.getDefaultSharedPreferences(mContext)
+        editor = preferences?.edit()
 
         swipeBtn = mBinding?.swipeBtn
         transitionsContainer = mBinding?.transitionsContainer
@@ -268,6 +334,19 @@ class QuizFragment : BaseFragment(), Animation.AnimationListener{
 
         val sharedpreferences = PreferenceManager.getDefaultSharedPreferences(context)
         quizParam.userId = sharedpreferences.getInt(Constants.USER_ID, 0)
+        /*
+        val mapper = ObjectMapper()
+        var jsonUser:String = sharedpreferences?.getString("UserObject","")!!
+        Log.e("USEROBJECT",jsonUser)
+        try {
+            // JSON string to Java object
+            val user: UserProfile = mapper.readValue(jsonUser, UserProfile::class.java)
+            quizParam.userId = user.id
+        } catch (e: IOException) {
+            e.printStackTrace()
+        }
+         */
+
         //Logger.e("Get Quiz Response", response.toString())
         var editor: SharedPreferences.Editor? = sharedpreferences?.edit()
         if(isFinal==true)

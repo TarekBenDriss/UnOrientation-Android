@@ -2,17 +2,18 @@
     <string name="app_name">UnOrientation</string>
     <string name="adresse">Address</string>
     <string name="email">E-mail</string>
-    <string name="password">Password</string>
-    <string name="fullname">Full Name</string>
+    <string name="password">Mot de passe</string>
+    <string name="fullname">Nom</string>
     <string name="bac">Bac</string>
     <string name="moyennebac">Moyenne Bac</string>
     <string name="code_agence">Agency code</string>
-    <string name="dont_have_account">Don\'t have an account? Register now...</string>
-    <string name="have_account">Have an account? Sign in now...</string>
-    <string name="error_incorrect_password_msg">Please try again</string>
+    <string name="dont_have_account">Vous n\'avez pas un compte? Inscrivez vous maintenant...</string>
+    <string name="have_account">Vous avez un compte? Connectez vous...</string>
+    <string name="error_incorrect_password_msg">Veuillez ressayer</string>
+    <string name="error_connection">Erreur de connexion</string>
 
-    <string name="login">CONNECT</string>
-    <string name="register">REGISTER</string>
+    <string name="login">SE CONNECTER</string>
+    <string name="register">S\'INSCRIRE</string>
     <string name="login_word">Login</string>
     <string name="img_description">Description</string>
     <string name="error_incorrect_password">Wrong password</string>
@@ -32,12 +33,12 @@
 
     <string name="empty" />
     <string name="ok">OK</string>
-    <string name="required_fields">Please fill all required fields</string>
-    <string name="moy_valid">Please fill a valid moy</string>
-    <string name="username_valid">Username should contain 3 chars at least</string>
-    <string name="password_valid">Password should contain 4 chars at least</string>
+    <string name="required_fields">Veuillez remplir tous les champ</string>
+    <string name="moy_valid">Veuillez saisir une moyenne valide</string>
+    <string name="username_valid">Le username dois contenir au moins 3 lettres</string>
+    <string name="password_valid">Le mot de passe dois contenir au moins 4 lettres</string>
 
-    <string name="dialog_action_yes">Yes</string>
+    <string name="dialog_action_yes">Oui</string>
     <string name="dialog_action_no">No</string>
     <string name="sm1">JAN</string>
     <string name="sm2">FEB</string>
@@ -57,13 +58,13 @@
     <string name="missions">Missions</string>
     <string name="add">Add</string>
     <string name="settings">Settings</string>
-    <string name="logout">Logout</string>
+    <string name="logout">Se déconnecter</string>
     <string name="menu_description">Select your theme</string>
     <string name="news">News</string>
     <string name="quiz">Quiz</string>
     <string name="nbrOffres">Nombre des offres</string>
     <string name="spinoffOffres">Echantillon des offres</string>
-    <string name="jobstats">Job stats</string>
+    <string name="jobstats">Statistiques des jobs</string>
     <string name="guide">Guide</string>
     <string name="historique">Historique</string>
     <string name="expense_report">Expense report</string>
@@ -75,7 +76,7 @@
     <string name="formresult">Le résultat de votre quiz</string>
     <string name="keyword">Mot clé :</string>
     <string name="salary_advance">Salary Advance</string>
-    <string name="profile">"My profile</string>
+    <string name="profile">"Mon profil</string>
     <string name="cra">CRA</string>
     <string name="chat">Chat</string>
 

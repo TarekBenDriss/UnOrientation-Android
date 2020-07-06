@@ -1,9 +1,44 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <group android:checkableBehavior="single">
+
+
+        <item
+            android:id="@+id/quiz"
+            android:title="@string/quiz"
+            />
+
+        <item
+            android:id="@+id/jobstats"
+            android:title="@string/jobstats"
+            />
+
+
+        <item
+            android:id="@+id/guide"
+            android:title="@string/guideorientation"
+            />
+
+
+        <item
+            android:id="@+id/historique"
+            android:title="@string/historique"
+            />
+
+
+        <item
+            android:id="@+id/monprofil"
+            android:title="@string/profile"
+            />
+
+        <item
+            android:id="@+id/score"
+            android:title="Calculer son score"
+            />
+
+
         <item
             android:id="@+id/nav_first_fragment"
-            android:icon="@drawable/ic_logout"
             android:title="@string/logout"
             />
 

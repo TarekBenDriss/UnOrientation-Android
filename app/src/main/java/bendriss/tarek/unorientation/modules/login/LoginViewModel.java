@@ -12,7 +12,9 @@ import bendriss.tarek.unorientation.App;
 import bendriss.tarek.unorientation.base.BaseViewModel;
 import bendriss.tarek.unorientation.data.source.local.entity.UserProfile;
 import bendriss.tarek.unorientation.data.source.remote.params.LoginParams;
+import bendriss.tarek.unorientation.data.source.remote.params.ScoreParam;
 import bendriss.tarek.unorientation.data.source.remote.response.LoginResponse;
+import bendriss.tarek.unorientation.data.source.remote.response.ObjectResponse;
 import bendriss.tarek.unorientation.data.source.remote.response.SignupResponse;
 import bendriss.tarek.unorientation.data.source.repository.UserRepository;
 import io.reactivex.Single;
@@ -87,6 +89,15 @@ public class LoginViewModel extends BaseViewModel {
         return mRepository.getConnectedUserProfile();
     }
 */
+
+    public Single<ObjectResponse> getScore(ScoreParam lp) {
+        return mRepository.getScore(lp)
+                //
+                .subscribeOn(Schedulers.computation())
+                //
+                .observeOn(AndroidSchedulers.mainThread());
+    }
+
 
     public Single<LoginResponse> signin(LoginParams lp) {
         return mRepository.login(lp)

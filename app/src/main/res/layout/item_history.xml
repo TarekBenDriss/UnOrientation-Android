@@ -60,6 +60,7 @@
 
 
                 <ImageView
+                    android:visibility="visible"
                     android:layout_width="0dp"
                     android:layout_height="0dp"
                     android:src="@drawable/bm_btn"
@@ -79,6 +80,10 @@
                     android:gravity="center"
                     android:textColor="@color/white"
                     android:textSize="11sp"
+                    android:paddingEnd="8dp"
+                    android:paddingTop="4dp"
+                    android:paddingBottom="4dp"
+                    android:paddingStart="8dp"
                     android:text="@{history.history.date}"
                     tools:text="12-12-2012"
                     android:layout_marginBottom="16dp"
@@ -88,6 +93,25 @@
                     app:layout_constraintWidth_percent="0.30" />
 
 
+                <!--
+                <Button
+                    android:id="@+id/date1"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="12dp"
+                    android:fontFamily="@font/comfortaalight"
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                    android:background="@drawable/bm_btn_wrapped"
+                    android:textSize="11sp"
+                    android:text="@{history.history.date}"
+                    tools:text="12-12-2012"
+                    android:layout_marginBottom="16dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/type" />
+                -->
 
                 <ImageView
                     android:id="@+id/fleche"

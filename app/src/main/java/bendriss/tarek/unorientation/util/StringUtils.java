@@ -313,6 +313,10 @@ public class StringUtils {
         return str.length()==i;
     }
 
+    public static boolean isLengthOrGreater(CharSequence str, int i) {
+        return str.length()>=i;
+    }
+
     /**
      * this function checks if two strings are equals
      * @param a

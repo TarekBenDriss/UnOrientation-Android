@@ -36,6 +36,7 @@ import bendriss.tarek.unorientation.util.AlertDialogUtils
 import bendriss.tarek.unorientation.util.Constants
 import bendriss.tarek.unorientation.util.Logger
 import bendriss.tarek.unorientation.util.StringUtils
+import com.fasterxml.jackson.databind.ObjectMapper
 import com.google.android.material.snackbar.Snackbar
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
@@ -43,6 +44,7 @@ import io.reactivex.disposables.Disposable
 import io.reactivex.observers.DisposableSingleObserver
 import io.reactivex.schedulers.Schedulers
 import kotlinx.android.synthetic.main.fragment_login.*
+import java.io.IOException
 
 
 class LoginFragment : BaseFragment() {
@@ -175,10 +177,22 @@ class LoginFragment : BaseFragment() {
                         editor!!.putInt(Constants.USER_ID, response.user.id)
                         editor!!.putString(Constants.TOKEN, response.user.token)
                         editor!!.putBoolean(Constants.IS_LOGGED_IN, true)
+
+                        val mapper = ObjectMapper()
+                        try {
+                            // Java objects to JSON string - compact-print
+                            val jsonString = mapper.writeValueAsString(response.user)
+                            editor!!.putString("UserObject", jsonString)
+                        } catch (e: IOException) {
+                            e.printStackTrace()
+                        }
+
                         editor!!.apply()
                         App.token = response.user.token
                         val intent = Intent(activity as LandingPageActivity, DashboardActivity::class.java)
                         intent.putExtra(Constants.TYPE,Constants.SIGNIN)
+
+
 
                         /*
                         sharedElementReturnTransition = TransitionInflater.from(activity).inflateTransition(R.transition.change_image_transition)

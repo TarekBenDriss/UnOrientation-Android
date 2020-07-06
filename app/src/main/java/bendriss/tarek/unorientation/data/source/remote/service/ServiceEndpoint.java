@@ -7,9 +7,11 @@ import java.util.List;
 import bendriss.tarek.unorientation.data.source.local.entity.UserProfile;
 import bendriss.tarek.unorientation.data.source.remote.params.LoginParams;
 import bendriss.tarek.unorientation.data.source.remote.params.QuizParam;
+import bendriss.tarek.unorientation.data.source.remote.params.ScoreParam;
 import bendriss.tarek.unorientation.data.source.remote.params.ScrapParam;
 import bendriss.tarek.unorientation.data.source.remote.response.HistoriqueResponse;
 import bendriss.tarek.unorientation.data.source.remote.response.LoginResponse;
+import bendriss.tarek.unorientation.data.source.remote.response.ObjectResponse;
 import bendriss.tarek.unorientation.data.source.remote.response.QuizResponse;
 import bendriss.tarek.unorientation.data.source.remote.response.ScrapResponse;
 import bendriss.tarek.unorientation.data.source.remote.response.SignupResponse;
@@ -64,10 +66,14 @@ public interface ServiceEndpoint {
     String GET_QUIZ_V2 = "quiz/get";
     String GET_HISTORIQUE = "quiz/historique/{id}/";
     String GET_SCRAP = "scrap/";
+    String GET_SCORE = "score/";
 
 
     @POST(LOGIN)
     Single<LoginResponse> login(@Query(USERNAME) String username, @Query(PASSWORD) String password);
+
+    @POST(GET_SCORE)
+    Single<ObjectResponse> getScore(@Body ScoreParam scoreParam);
 
     @POST(SIGNUP)
     Single<SignupResponse> signup(@Body UserProfile userProfile);

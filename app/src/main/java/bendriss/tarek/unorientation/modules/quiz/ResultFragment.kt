@@ -17,6 +17,7 @@ import bendriss.tarek.unorientation.data.source.remote.params.QuizParam
 import bendriss.tarek.unorientation.data.source.remote.response.QuizResponse
 import bendriss.tarek.unorientation.databinding.FragmentResultBinding
 import bendriss.tarek.unorientation.modules.dashboard.DashboardActivity
+import bendriss.tarek.unorientation.modules.dashboard.DashboardFragment
 import bendriss.tarek.unorientation.modules.jobstats.JobStatsFragment
 import bendriss.tarek.unorientation.util.AlertDialogUtils
 import bendriss.tarek.unorientation.util.Constants
@@ -73,11 +74,12 @@ class ResultFragment : Fragment() {
 
 
         mBinding?.homeBtn?.setOnClickListener(View.OnClickListener {
-            activity?.onBackPressed()
+            //activity?.onBackPressed()
+            fragmentManager?.beginTransaction()?.replace(R.id.fragment,DashboardFragment())?.commit()
         })
 
         mBinding?.offresBtn?.setOnClickListener(View.OnClickListener {
-            fragmentManager?.beginTransaction()?.replace(R.id.fragment, JobStatsFragment())?.commit()
+            fragmentManager?.beginTransaction()?.replace(R.id.fragment, JobStatsFragment())?.addToBackStack(null)?.commit()
 ""        })
 
 
@@ -109,6 +111,8 @@ class ResultFragment : Fragment() {
                             resultTxt?.text = response.question
                             //resultTxt?.text = response.id
                             mBinding?.code?.text = response.name
+                            mBinding?.rang?.text = response.answersSize.toString()
+                            mBinding?.votreRang?.text = response.answers[0].toString()
 
                             Glide.with(context!!).applyDefaultRequestOptions(RequestOptions().disallowHardwareConfig())
                                     .load("http://5.135.52.75/img/"+response.name+".png")

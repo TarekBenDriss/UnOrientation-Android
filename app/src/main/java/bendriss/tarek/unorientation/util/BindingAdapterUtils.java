@@ -31,127 +31,187 @@ public class BindingAdapterUtils {
 
     @BindingAdapter("changeText")
     public static void setImageUrl(TextView view, String txt) {
+        Log.e("TEXT","1 "+txt);
         txt = txt.toLowerCase();
+        Log.e("TEXT","2 "+txt);
         switch (txt) {
             case "pleinair":
                 view.setText("Plein air");
                 break;
             case "mathphyinf":
                 view.setText("Math, physique, informatique");
+                break;
             case "prepaintegré":
                 view.setText("Préparatoir integré");
+                break;
             case "chimiebiologie":
                 view.setText("Chimie et biologie");
+                break;
             case "biologiegeologie":
                 view.setText("Biologie et geologie");
+                break;
             case "scphyinf":
                 view.setText("Science, physique, informatique");
+                break;
             case "appliquéegestion":
                 view.setText("Informatique appliquée à la gestion");
+                break;
             case "statenvironnement":
                 view.setText("Statistiques d'environnement");
+                break;
             case "nouvellestecho":
                 view.setText("Nouvelles technologies");
+                break;
             case "physiquechimie":
                 view.setText("Physique et chimie");
+                break;
             case "ingindus":
                 view.setText("Ingénierie industrielle");
+                break;
             case "ingnrj":
                 view.setText("Ingénierie d'énergie");
+                break;
             case "scdelaterre":
                 view.setText("Sciences de la terre");
+                break;
             case "scexactes":
                 view.setText("Sciences exactes");
+                break;
             case "scinformatique":
                 view.setText("Sciences informatiques");
+                break;
             case "schumaines":
                 view.setText("Sciences humaines");
+                break;
             case "philo":
                 view.setText("Philosophies");
+                break;
             case "islam":
                 view.setText("Islam");
+                break;
             case "patrimoineislm":
                 view.setText("Patrimoine islmique");
+                break;
             case "scislamique":
                 view.setText("Sciences islamiques");
+                break;
             case "scdechariaa":
                 view.setText("Sciences de chariaa");
+                break;
             case "documentationarch":
                 view.setText("Documentation et archive");
+                break;
             case "patrimoineculturel":
                 view.setText("Patrimoine culturel");
+                break;
             case "scd'education":
                 view.setText("Sciences de l'education");
+                break;
             case "educationspecialisé":
                 view.setText("Education specialisée");
+                break;
             case "education/enseignement":
                 view.setText("Education / enseignement");
+                break;
             case "politiquejuridique":
                 view.setText("Politique et juridique");
+                break;
             case "9anoun":
                 view.setText("Droit");
+                break;
             case "9anounejtime3i":
                 view.setText("Droit social");
+                break;
             case "natureetagriculture":
                 view.setText("Nature et agriculture");
+                break;
             case "scdelavie":
                 view.setText("Sciences de la vie");
+                break;
             case "phy/loisir":
                 view.setText("Physique et loisirs");
+                break;
             case "nrml":
                 view.setText("Normal");
+                break;
             case "artclassique":
                 view.setText("Art classique");
+                break;
             case "cinemaa/v":
                 view.setText("Cinema et audio/visuel");
+                break;
             case "artmoderne":
                 view.setText("Art moderne");
+                break;
             case "sonetnvltechno":
                 view.setText("Son et nouvelles technonologies");
+                break;
             case "ar":
                 view.setText("Arabe");
+                break;
             case "fr":
                 view.setText("Francais");
+                break;
             case "eng":
                 view.setText("Anglais");
+                break;
             case "icharat":
                 view.setText("Langage des signes");
+                break;
             case "sceco":
                 view.setText("Sciences economiques");
+                break;
             case "compta":
                 view.setText("Comptabilité");
+                break;
             case "sante":
                 view.setText("Santé");
+                break;
             case "santeetsecurité":
                 view.setText("Sante et securité");
+                break;
             case "tadrim9adam739":
                 view.setText("Soins des pieds");
+                break;
             case "dentaire":
                 view.setText("Medecine dentaire");
+                break;
             case "ta8dhya":
                 view.setText("Nutrition");
+                break;
             case "smur":
                 view.setText("Service mobile d'urgence et de réanimation");
+                break;
             case "smurenfant":
                 view.setText("Service mobile d'urgence et de réanimation enfants");
+                break;
             case "3ilejtabi3i":
                 view.setText("Traitement naturel");
+                break;
             case "3ilej3amal":
                 view.setText("Ergothérapie");
+                break;
             case "prothesedent":
                 view.setText("Prothèse dentaire");
+                break;
             case "ecoute":
                 view.setText("Appareils d'écoute");
+                break;
             case "not9":
                 view.setText("Prononciation");
+                break;
             case "tawlid":
                 view.setText("Sage-femme");
+                break;
             case "lunetet739":
                 view.setText("Lunettes et optique");
+                break;
             case "jira7et3dham":
                 view.setText("Chirurgie orthopédique");
+                break;
             case "appareil oper":
                 view.setText("Équipement de théâtre chirurgical");
+                break;
             case "tabnijwin3ach":
                 view.setText("Anesthésie et réanimation");
             default:

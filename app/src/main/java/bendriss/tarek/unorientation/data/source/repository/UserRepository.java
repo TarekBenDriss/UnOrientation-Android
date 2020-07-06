@@ -10,7 +10,9 @@ import bendriss.tarek.unorientation.data.source.local.UserLocalDataSource;
 import bendriss.tarek.unorientation.data.source.local.entity.UserProfile;
 import bendriss.tarek.unorientation.data.source.remote.UserRemoteDataSource;
 import bendriss.tarek.unorientation.data.source.remote.params.LoginParams;
+import bendriss.tarek.unorientation.data.source.remote.params.ScoreParam;
 import bendriss.tarek.unorientation.data.source.remote.response.LoginResponse;
+import bendriss.tarek.unorientation.data.source.remote.response.ObjectResponse;
 import bendriss.tarek.unorientation.data.source.remote.response.SignupResponse;
 import bendriss.tarek.unorientation.util.Logger;
 import io.reactivex.Single;
@@ -49,6 +51,15 @@ public class UserRepository {
                         userLocalDataSource.deleteUserProfile();
                         userLocalDataSource.addConnectedUser(user);
                     }
+                });
+    }
+
+
+
+    public Single<ObjectResponse> getScore(ScoreParam lp) {
+        return userRemoteDataSource.getScore(lp)
+                // oon Succes do in other thread
+                .doOnSuccess(response -> {
                 });
     }
 
